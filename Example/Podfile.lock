@@ -1,16 +1,24 @@
 PODS:
-  - EasyPopUp (0.1.0)
+  - DynamicBlurView (2.0.2)
+  - EasyPopUp (0.1.0):
+    - DynamicBlurView
 
 DEPENDENCIES:
+  - DynamicBlurView
   - EasyPopUp (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DynamicBlurView
 
 EXTERNAL SOURCES:
   EasyPopUp:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyPopUp: 48678620abe04fbecbf8a68cacd374c3da59891e
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  EasyPopUp: 38f8c9980818945fe2268dc2bba56cbb01d33ddc
 
-PODFILE CHECKSUM: f52e593b10eac72fa9b610eac84a67b33f7b2307
+PODFILE CHECKSUM: 332e2c6fce5da59e8b33f0f4960c34cdfd43ec65
 
 COCOAPODS: 1.5.0

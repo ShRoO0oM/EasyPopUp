@@ -7,101 +7,183 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06F4A0EE3DB8A7D996B35907A65C11C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		09BBCFD1450B7F6A5F27D8A9E6606159 /* EasyPopUp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDF8F4922B63DB55C27FF7DEA3124BE /* EasyPopUp-dummy.m */; };
-		216F763886B6CFE385FC6CAD914D7673 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		22473DE10096429D99AB75487AD8C6C7 /* EasyPopUp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B30A0FD42A29158EAAC4A06AA2F4307 /* EasyPopUp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		243ADE3380EA6B82252002AFC9EA15ED /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF1CAA53BF207700D1FEFD4DEF7A68 /* ReplaceMe.swift */; };
-		2CBA2A18B91618917A5CD241858B5416 /* Pods-EasyPopUp_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2665C10975BBF0511824C2A8BB4030 /* Pods-EasyPopUp_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D7295120E96D7C38E85A3F96FB0CBE0 /* Pods-EasyPopUp_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D78E377D5B786E82B7AD2C7DAC09CD /* Pods-EasyPopUp_Example-dummy.m */; };
-		80F44337A554E59056252608D6E916B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CEA2842B70E31663593F226B3EB240CF /* Pods-EasyPopUp_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14305AAC45D5657BECA1A0D1CD63F32A /* Pods-EasyPopUp_Tests-dummy.m */; };
-		E3DACC422152647511CA9C1A46AF4F5F /* Pods-EasyPopUp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAD04BA062EF0AF598E3C07D4DB44E6 /* Pods-EasyPopUp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F979D0A878062EA1DFD82B4ACE22C01 /* DynamicBlurView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */; };
+		10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAA1341F51CBCE036B7DE8DE5A4D4BD /* PopUpClass.swift */; };
+		18E6B3D32EC058E94723B7176F6625E2 /* Pods-EasyPopUp_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14305AAC45D5657BECA1A0D1CD63F32A /* Pods-EasyPopUp_Tests-dummy.m */; };
+		1BD95819A67825305691F9D03A1477E3 /* DynamicBlurView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9F4753FE62FAD7697058971F39E531 /* DynamicBlurView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D1D430F5125545E8971322498460D9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612F10A016B8BFBB15183F4726D8A3CD /* UIKit.framework */; };
+		2F6D143061A37F1799C4E9E70178679C /* DynamicBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = F353E3FD28871D0238203C10C305EBB9 /* DynamicBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31AD5EB7579AC3BAE8DD87B5E23CC6EE /* Pods-EasyPopUp_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D78E377D5B786E82B7AD2C7DAC09CD /* Pods-EasyPopUp_Example-dummy.m */; };
+		364486CD6F186A53F210AFD1A26ADA78 /* Pods-EasyPopUp_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2665C10975BBF0511824C2A8BB4030 /* Pods-EasyPopUp_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FD73E55B5CF7EDA64845D9D1442FDFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C8341822E8133D80F044E098E758C1 /* Foundation.framework */; };
+		46948DAFC76CE60532EB6D1C3D4D06EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C8341822E8133D80F044E098E758C1 /* Foundation.framework */; };
+		5CD97EA5420042BC0D69AA7E81088D00 /* DynamicBlurView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C08474D52BCBB2E550CBDD75332B6D4 /* DynamicBlurView.framework */; };
+		5D19BAE8B0155836806C26876E2F812A /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBDE82645FD8C7675B1113206B698B /* CGImage+Accelerate.swift */; };
+		608FF6E4BCB0660D1D6D9DB0FF6B22FC /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A87DA2F03713A074B0B05130EE4A02 /* DynamicBlurView.swift */; };
+		63C576FD079ED3EB1A5092F6F39BDF28 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F826E78D452A674AD52BD7B13C6E6C /* Accelerate.framework */; };
+		693AC2162A8FA41AE53E28D5D2C2CC9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C8341822E8133D80F044E098E758C1 /* Foundation.framework */; };
+		6B6327AB2368E90DB0648935BAE871DD /* EasyPopUp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 114C734A6EC235EB27B6ED63C779F291 /* EasyPopUp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C1E56CFB256AF1C64069DA54167A8BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612F10A016B8BFBB15183F4726D8A3CD /* UIKit.framework */; };
+		72763BA40BBEB214F29FF33DE5FB907C /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA899F5A146F7D8F05AD7064636F980 /* CaptureQuality.swift */; };
+		7B29684CD3D29B0354EA9056BFABB546 /* Pods-EasyPopUp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAD04BA062EF0AF598E3C07D4DB44E6 /* Pods-EasyPopUp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82BD34CDF279D0AC1810CDE02EF4C156 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3452325E1CBC35AF8CF1CB10273A9617 /* UIImage+Blur.swift */; };
+		9584B98DAE3E860B6AB5EA9781DC7057 /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E833FD317D38E463416EE2BA33425F /* BlurLayer.swift */; };
+		C2DB0E4B4EC4B4DF8EA4B96FB78FBA99 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65426B2F39A33CF0D5D980378D4880D9 /* TrackingMode.swift */; };
+		C96C98BEACE77C1100DDC8524DCBE4FE /* EasyPopUp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26131D7B0A66457F04A7486E593E2ABD /* EasyPopUp-dummy.m */; };
+		F2074B24A7257FB9C7A4AD6BC8ADD750 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C8341822E8133D80F044E098E758C1 /* Foundation.framework */; };
+		FB5CECAD4729CF846E332E692D1673B1 /* CGContext+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BEE4F0CB7BDBBF69606E7CF72A9F52 /* CGContext+CGImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BFB6EB2535CBEE00C35A4422BCFF95F6 /* PBXContainerItemProxy */ = {
+		0645A4127D7A73F92E3ABA9C78427593 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DA964326728A841ADD6576C237DFAF51;
+			remoteGlobalIDString = 9AD6E417B292CCB529632F0FA6F2EFEC;
+			remoteInfo = DynamicBlurView;
+		};
+		12659D11CB4CFDAECD3F45FB121BA579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AD6E417B292CCB529632F0FA6F2EFEC;
+			remoteInfo = DynamicBlurView;
+		};
+		1D2609DD002A7EC33EC0E46787A7F3E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F80DDD0FAB74195AB36E9E80A6D7BD4;
+			remoteInfo = EasyPopUp;
+		};
+		34983AB01AF008A8BC13E59239BF6BC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05F91AD341CBE01DBA7C1618877560A;
 			remoteInfo = "Pods-EasyPopUp_Example";
 		};
-		E51E060177A34D3FCAFB8F279FE9479C /* PBXContainerItemProxy */ = {
+		F26768B7D17C19C7DCD7DE9AAD3A9DCA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6B7E9B01184B176F2B936AE380A02DC4;
-			remoteInfo = EasyPopUp;
+			remoteGlobalIDString = 9AD6E417B292CCB529632F0FA6F2EFEC;
+			remoteInfo = DynamicBlurView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02F3742CC066A3542A30418891023DD4 /* Pods-EasyPopUp_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPopUp_Tests-resources.sh"; sourceTree = "<group>"; };
+		03360D8E63645F4D39B9E0C7A1ABA527 /* EasyPopUp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EasyPopUp.modulemap; sourceTree = "<group>"; };
 		040748A047C17B595257957694297E96 /* Pods-EasyPopUp_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EasyPopUp_Tests.modulemap"; sourceTree = "<group>"; };
+		08388F563F3F8F0123E19321E0FFCFCA /* DynamicBlurView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicBlurView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAD04BA062EF0AF598E3C07D4DB44E6 /* Pods-EasyPopUp_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EasyPopUp_Tests-umbrella.h"; sourceTree = "<group>"; };
+		10E833FD317D38E463416EE2BA33425F /* BlurLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurLayer.swift; path = DynamicBlurView/BlurLayer.swift; sourceTree = "<group>"; };
+		114C734A6EC235EB27B6ED63C779F291 /* EasyPopUp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPopUp-umbrella.h"; sourceTree = "<group>"; };
 		14305AAC45D5657BECA1A0D1CD63F32A /* Pods-EasyPopUp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPopUp_Tests-dummy.m"; sourceTree = "<group>"; };
+		153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicBlurView-dummy.m"; sourceTree = "<group>"; };
 		1E14CD0BAE17E13F186D040DBA9FE096 /* Pods-EasyPopUp_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPopUp_Example-frameworks.sh"; sourceTree = "<group>"; };
+		26131D7B0A66457F04A7486E593E2ABD /* EasyPopUp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyPopUp-dummy.m"; sourceTree = "<group>"; };
+		2AAA1341F51CBCE036B7DE8DE5A4D4BD /* PopUpClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopUpClass.swift; path = EasyPopUp/Classes/PopUpClass.swift; sourceTree = "<group>"; };
 		30B50D7BA04E8952569F52B2DA3C5EE6 /* Pods-EasyPopUp_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyPopUp_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3362921D0BB87D1906FD37F904E3E310 /* Pods-EasyPopUp_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EasyPopUp_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3452325E1CBC35AF8CF1CB10273A9617 /* UIImage+Blur.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Blur.swift"; path = "DynamicBlurView/UIImage+Blur.swift"; sourceTree = "<group>"; };
 		3CC20DFE3AE256F9A145C6BB0CD6B106 /* Pods-EasyPopUp_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyPopUp_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		47C4CFE703C795A0E73496D966DF9B30 /* EasyPopUp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPopUp-prefix.pch"; sourceTree = "<group>"; };
-		5B30A0FD42A29158EAAC4A06AA2F4307 /* EasyPopUp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPopUp-umbrella.h"; sourceTree = "<group>"; };
 		5E24D6C558AAADF40CC13DDD9752ECEE /* Pods-EasyPopUp_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPopUp_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		700A1A253107F7D4EA34D4C95877C1EC /* Pods_EasyPopUp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EasyPopUp_Tests.framework; path = "Pods-EasyPopUp_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		70BE190E2B22D7560C98903F60CBC2E6 /* Pods_EasyPopUp_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EasyPopUp_Example.framework; path = "Pods-EasyPopUp_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8203DD60F808AE83273C365FEBFD3D5C /* EasyPopUp.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = EasyPopUp.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5EE5B180AF5F62FA6997279E8DA3F82E /* EasyPopUp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPopUp.xcconfig; sourceTree = "<group>"; };
+		612F10A016B8BFBB15183F4726D8A3CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		65426B2F39A33CF0D5D980378D4880D9 /* TrackingMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackingMode.swift; path = DynamicBlurView/TrackingMode.swift; sourceTree = "<group>"; };
+		7B7E179E2A508359886B685CA0A6D8E6 /* DynamicBlurView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicBlurView.xcconfig; sourceTree = "<group>"; };
+		7C08474D52BCBB2E550CBDD75332B6D4 /* DynamicBlurView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicBlurView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D78E377D5B786E82B7AD2C7DAC09CD /* Pods-EasyPopUp_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPopUp_Example-dummy.m"; sourceTree = "<group>"; };
 		8795A67677B6E5C389DEAFDBF64EAAF5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8CE572E0A2A953D404C1B98EC88FCC32 /* EasyPopUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyPopUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97F826E78D452A674AD52BD7B13C6E6C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		9C2665C10975BBF0511824C2A8BB4030 /* Pods-EasyPopUp_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EasyPopUp_Example-umbrella.h"; sourceTree = "<group>"; };
+		9C9F4753FE62FAD7697058971F39E531 /* DynamicBlurView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicBlurView-umbrella.h"; sourceTree = "<group>"; };
 		9DF27CA84DD2863A7117F3485CE4A198 /* Pods-EasyPopUp_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EasyPopUp_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		9EBBDE82645FD8C7675B1113206B698B /* CGImage+Accelerate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGImage+Accelerate.swift"; path = "DynamicBlurView/CGImage+Accelerate.swift"; sourceTree = "<group>"; };
 		A6C0FDFFD0DF23F896B5EE444EF627C0 /* Pods-EasyPopUp_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPopUp_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AA9B5AA2C14A7A3B1DAAF77E751B7701 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AADD7D4014D43CC9AAC3CDB72D8B8A26 /* Pods-EasyPopUp_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPopUp_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		AE211DA27D84033274FADD5F89B00B25 /* DynamicBlurView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DynamicBlurView.modulemap; sourceTree = "<group>"; };
 		AE2AA20EC36550231BA128979278F231 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B04572C226FC761AA3D3397066E82AE5 /* Pods-EasyPopUp_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPopUp_Example-resources.sh"; sourceTree = "<group>"; };
-		B33F2838C41909A02CAA87D28CB029D5 /* EasyPopUp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EasyPopUp.modulemap; sourceTree = "<group>"; };
-		C76D1B7EA9BDE82B15DCFA5A6F1BE2C8 /* EasyPopUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyPopUp.framework; path = EasyPopUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBDF8F4922B63DB55C27FF7DEA3124BE /* EasyPopUp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyPopUp-dummy.m"; sourceTree = "<group>"; };
-		CECF1CAA53BF207700D1FEFD4DEF7A68 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = EasyPopUp/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
-		D2BDAE3609B38FE155B7583DE2F7EF94 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D40B76D3DABAAE1A6F33BE175CCAA7CE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B06A7B358F73076FD0FFF4CEADC67289 /* Pods_EasyPopUp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPopUp_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A87DA2F03713A074B0B05130EE4A02 /* DynamicBlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicBlurView.swift; path = DynamicBlurView/DynamicBlurView.swift; sourceTree = "<group>"; };
+		BBD54B1A5EF9305A8F7DC2AF53A03685 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BEE90A0AE51C895AF7FDC12D193ACD46 /* EasyPopUp.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = EasyPopUp.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C3C8341822E8133D80F044E098E758C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D3A848667161DD6AF5AFC65E1D8F87C5 /* EasyPopUp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPopUp-prefix.pch"; sourceTree = "<group>"; };
+		D3BEE4F0CB7BDBBF69606E7CF72A9F52 /* CGContext+CGImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGContext+CGImage.swift"; path = "DynamicBlurView/CGContext+CGImage.swift"; sourceTree = "<group>"; };
 		DBC1B23FFC8702A151AFFEA15D000D5A /* Pods-EasyPopUp_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPopUp_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E059C8BEC3AAC389063DB8EBCF3F15F6 /* DynamicBlurView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DynamicBlurView-prefix.pch"; sourceTree = "<group>"; };
+		EA1D28520FF4E50E9EA0121AA6AEF743 /* Pods_EasyPopUp_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPopUp_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA899F5A146F7D8F05AD7064636F980 /* CaptureQuality.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaptureQuality.swift; path = DynamicBlurView/CaptureQuality.swift; sourceTree = "<group>"; };
+		EF5E21B3D8195F718EA93A6A3A2C635C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFD4A0EDDEEF8E165DCEA4319D94CEFE /* Pods-EasyPopUp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPopUp_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F58B87F28717C17CAAF15F2D49B7D360 /* EasyPopUp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPopUp.xcconfig; sourceTree = "<group>"; };
+		F32F397F5AFB1168C0014B41482DC301 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F353E3FD28871D0238203C10C305EBB9 /* DynamicBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DynamicBlurView.h; path = DynamicBlurView/DynamicBlurView.h; sourceTree = "<group>"; };
 		F98E427829CD426495FC5920062347F1 /* Pods-EasyPopUp_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EasyPopUp_Example.modulemap"; sourceTree = "<group>"; };
-		FC07B46057AACAF55DFDC339EA5AB71D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		78078227692854FE0BEFA07BBACFBD5B /* Frameworks */ = {
+		37608EB9AE41120167AEB6BFD44DFF85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				216F763886B6CFE385FC6CAD914D7673 /* Foundation.framework in Frameworks */,
+				693AC2162A8FA41AE53E28D5D2C2CC9C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5ED910D1B7F3B1D94E4F984FD96554 /* Frameworks */ = {
+		81668173AE602C46A6D214E9B4F84F91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06F4A0EE3DB8A7D996B35907A65C11C2 /* Foundation.framework in Frameworks */,
+				63C576FD079ED3EB1A5092F6F39BDF28 /* Accelerate.framework in Frameworks */,
+				46948DAFC76CE60532EB6D1C3D4D06EE /* Foundation.framework in Frameworks */,
+				6C1E56CFB256AF1C64069DA54167A8BB /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F43BF5BFADFAEC530BF85447926758E2 /* Frameworks */ = {
+		CFB94A6C78546ECFB3A1DCAA6BE8EE54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F44337A554E59056252608D6E916B3 /* Foundation.framework in Frameworks */,
+				F2074B24A7257FB9C7A4AD6BC8ADD750 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0442DAC667EE109D45F41081CA0B2BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD97EA5420042BC0D69AA7E81088D00 /* DynamicBlurView.framework in Frameworks */,
+				3FD73E55B5CF7EDA64845D9D1442FDFC /* Foundation.framework in Frameworks */,
+				1D1D430F5125545E8971322498460D9E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F8716C2D5CECF19D51970E84995748 /* DynamicBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				10E833FD317D38E463416EE2BA33425F /* BlurLayer.swift */,
+				EEA899F5A146F7D8F05AD7064636F980 /* CaptureQuality.swift */,
+				D3BEE4F0CB7BDBBF69606E7CF72A9F52 /* CGContext+CGImage.swift */,
+				9EBBDE82645FD8C7675B1113206B698B /* CGImage+Accelerate.swift */,
+				F353E3FD28871D0238203C10C305EBB9 /* DynamicBlurView.h */,
+				B3A87DA2F03713A074B0B05130EE4A02 /* DynamicBlurView.swift */,
+				65426B2F39A33CF0D5D980378D4880D9 /* TrackingMode.swift */,
+				3452325E1CBC35AF8CF1CB10273A9617 /* UIImage+Blur.swift */,
+				7E102B636D7876AA89EB465D22E3D57E /* Support Files */,
+			);
+			path = DynamicBlurView;
+			sourceTree = "<group>";
+		};
 		04093069063FC7B1C6D4B635F26260B1 /* Pods-EasyPopUp_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,14 +211,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		31D1756A9C6A383453B30818248D6E92 /* Products */ = {
+		14797BE6F8AA208DF9E040750205D343 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C76D1B7EA9BDE82B15DCFA5A6F1BE2C8 /* EasyPopUp.framework */,
-				70BE190E2B22D7560C98903F60CBC2E6 /* Pods_EasyPopUp_Example.framework */,
-				700A1A253107F7D4EA34D4C95877C1EC /* Pods_EasyPopUp_Tests.framework */,
+				03360D8E63645F4D39B9E0C7A1ABA527 /* EasyPopUp.modulemap */,
+				5EE5B180AF5F62FA6997279E8DA3F82E /* EasyPopUp.xcconfig */,
+				26131D7B0A66457F04A7486E593E2ABD /* EasyPopUp-dummy.m */,
+				D3A848667161DD6AF5AFC65E1D8F87C5 /* EasyPopUp-prefix.pch */,
+				114C734A6EC235EB27B6ED63C779F291 /* EasyPopUp-umbrella.h */,
+				F32F397F5AFB1168C0014B41482DC301 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/EasyPopUp";
+			sourceTree = "<group>";
+		};
+		2A87C6BD2985946A84B2859D43BEF9B8 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BEE90A0AE51C895AF7FDC12D193ACD46 /* EasyPopUp.podspec */,
+				AA9B5AA2C14A7A3B1DAAF77E751B7701 /* LICENSE */,
+				BBD54B1A5EF9305A8F7DC2AF53A03685 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4DA06CEAE2840244C629106997C2679C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				97F826E78D452A674AD52BD7B13C6E6C /* Accelerate.framework */,
+				C3C8341822E8133D80F044E098E758C1 /* Foundation.framework */,
+				612F10A016B8BFBB15183F4726D8A3CD /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -144,20 +250,36 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				D3506FEE90C02F00FFECF15B911C254E /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				31D1756A9C6A383453B30818248D6E92 /* Products */,
+				B4CCC7FF42736397EBF9D7E98A71C928 /* Frameworks */,
+				BD3E4FA074065E5C5B16F712962926D1 /* Pods */,
+				9FFBEEC96E44C4C41532FCB8986FAB99 /* Products */,
 				130AB482642EBEEA656FB7C9E906FD8C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9DA4F5F33906F99CDDA51DF5DA3034EB /* Pod */ = {
+		7E102B636D7876AA89EB465D22E3D57E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8203DD60F808AE83273C365FEBFD3D5C /* EasyPopUp.podspec */,
-				FC07B46057AACAF55DFDC339EA5AB71D /* LICENSE */,
-				D40B76D3DABAAE1A6F33BE175CCAA7CE /* README.md */,
+				AE211DA27D84033274FADD5F89B00B25 /* DynamicBlurView.modulemap */,
+				7B7E179E2A508359886B685CA0A6D8E6 /* DynamicBlurView.xcconfig */,
+				153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */,
+				E059C8BEC3AAC389063DB8EBCF3F15F6 /* DynamicBlurView-prefix.pch */,
+				9C9F4753FE62FAD7697058971F39E531 /* DynamicBlurView-umbrella.h */,
+				EF5E21B3D8195F718EA93A6A3A2C635C /* Info.plist */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "../Target Support Files/DynamicBlurView";
+			sourceTree = "<group>";
+		};
+		9FFBEEC96E44C4C41532FCB8986FAB99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08388F563F3F8F0123E19321E0FFCFCA /* DynamicBlurView.framework */,
+				8CE572E0A2A953D404C1B98EC88FCC32 /* EasyPopUp.framework */,
+				EA1D28520FF4E50E9EA0121AA6AEF743 /* Pods_EasyPopUp_Example.framework */,
+				B06A7B358F73076FD0FFF4CEADC67289 /* Pods_EasyPopUp_Tests.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A36288AD2640A859FD32F303900DFEBE /* Pods-EasyPopUp_Tests */ = {
@@ -178,136 +300,152 @@
 			path = "Target Support Files/Pods-EasyPopUp_Tests";
 			sourceTree = "<group>";
 		};
-		B12FE55E4334DEBE72FFFDCF5456BB65 /* Support Files */ = {
+		B4CCC7FF42736397EBF9D7E98A71C928 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B33F2838C41909A02CAA87D28CB029D5 /* EasyPopUp.modulemap */,
-				F58B87F28717C17CAAF15F2D49B7D360 /* EasyPopUp.xcconfig */,
-				CBDF8F4922B63DB55C27FF7DEA3124BE /* EasyPopUp-dummy.m */,
-				47C4CFE703C795A0E73496D966DF9B30 /* EasyPopUp-prefix.pch */,
-				5B30A0FD42A29158EAAC4A06AA2F4307 /* EasyPopUp-umbrella.h */,
-				D2BDAE3609B38FE155B7583DE2F7EF94 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/EasyPopUp";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				7C08474D52BCBB2E550CBDD75332B6D4 /* DynamicBlurView.framework */,
+				4DA06CEAE2840244C629106997C2679C /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D3506FEE90C02F00FFECF15B911C254E /* Development Pods */ = {
+		BD3E4FA074065E5C5B16F712962926D1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D66382239D801DBE031F96A0020A1FEE /* EasyPopUp */,
+				02F8716C2D5CECF19D51970E84995748 /* DynamicBlurView */,
 			);
-			name = "Development Pods";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		C121784ED475C05A93202600A293A40E /* EasyPopUp */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D66382239D801DBE031F96A0020A1FEE /* EasyPopUp */ = {
-			isa = PBXGroup;
-			children = (
-				CECF1CAA53BF207700D1FEFD4DEF7A68 /* ReplaceMe.swift */,
-				9DA4F5F33906F99CDDA51DF5DA3034EB /* Pod */,
-				B12FE55E4334DEBE72FFFDCF5456BB65 /* Support Files */,
+				2AAA1341F51CBCE036B7DE8DE5A4D4BD /* PopUpClass.swift */,
+				2A87C6BD2985946A84B2859D43BEF9B8 /* Pod */,
+				14797BE6F8AA208DF9E040750205D343 /* Support Files */,
 			);
 			name = EasyPopUp;
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		D3506FEE90C02F00FFECF15B911C254E /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C121784ED475C05A93202600A293A40E /* EasyPopUp */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		137E6446A53CD2EC13CFB31220488DAF /* Headers */ = {
+		5780D23677E756CCB12940F250B0F6FD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3DACC422152647511CA9C1A46AF4F5F /* Pods-EasyPopUp_Tests-umbrella.h in Headers */,
+				1BD95819A67825305691F9D03A1477E3 /* DynamicBlurView-umbrella.h in Headers */,
+				2F6D143061A37F1799C4E9E70178679C /* DynamicBlurView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A44EAB5FB516FFEAB5B9403BD444C1CC /* Headers */ = {
+		58B9756C66110B44D7D93CFA185E24CB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CBA2A18B91618917A5CD241858B5416 /* Pods-EasyPopUp_Example-umbrella.h in Headers */,
+				364486CD6F186A53F210AFD1A26ADA78 /* Pods-EasyPopUp_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE946ED30BC9691EEB0B77FACE3E1EED /* Headers */ = {
+		6B38934ED1AFA3945AAB320D0015185F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22473DE10096429D99AB75487AD8C6C7 /* EasyPopUp-umbrella.h in Headers */,
+				7B29684CD3D29B0354EA9056BFABB546 /* Pods-EasyPopUp_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7A4FF6B82F0DD486083591FD0BB09B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B6327AB2368E90DB0648935BAE871DD /* EasyPopUp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6B7E9B01184B176F2B936AE380A02DC4 /* EasyPopUp */ = {
+		0BE3C723286A36F86DCB0BCDF84B283A /* Pods-EasyPopUp_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAA465E7EA23D538F0230B09EC9B57B7 /* Build configuration list for PBXNativeTarget "EasyPopUp" */;
+			buildConfigurationList = 6993F5063CB37DD490EE1DA670F52BC1 /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Tests" */;
 			buildPhases = (
-				7E7B10E371661BAB6BD369E3D6D19A5E /* Sources */,
-				78078227692854FE0BEFA07BBACFBD5B /* Frameworks */,
-				AE946ED30BC9691EEB0B77FACE3E1EED /* Headers */,
+				67491AC6D69D8DFA42A0BB38FB9815B1 /* Sources */,
+				CFB94A6C78546ECFB3A1DCAA6BE8EE54 /* Frameworks */,
+				6B38934ED1AFA3945AAB320D0015185F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = EasyPopUp;
-			productName = EasyPopUp;
-			productReference = C76D1B7EA9BDE82B15DCFA5A6F1BE2C8 /* EasyPopUp.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		836727A3521AB9050B2D489E60E69A1C /* Pods-EasyPopUp_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9E3A3257E01BD780152C576D8AE973A0 /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Tests" */;
-			buildPhases = (
-				190411B6ED0976F52673636571448A5E /* Sources */,
-				BC5ED910D1B7F3B1D94E4F984FD96554 /* Frameworks */,
-				137E6446A53CD2EC13CFB31220488DAF /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E46CB41195DB4400BF4BE9028A23A96C /* PBXTargetDependency */,
+				9724167544913A3EFF104B7ADB12AA62 /* PBXTargetDependency */,
+				5E2D2E00B5DC1A3BC96330B1A5B53E52 /* PBXTargetDependency */,
 			);
 			name = "Pods-EasyPopUp_Tests";
 			productName = "Pods-EasyPopUp_Tests";
-			productReference = 700A1A253107F7D4EA34D4C95877C1EC /* Pods_EasyPopUp_Tests.framework */;
+			productReference = B06A7B358F73076FD0FFF4CEADC67289 /* Pods_EasyPopUp_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DA964326728A841ADD6576C237DFAF51 /* Pods-EasyPopUp_Example */ = {
+		8F80DDD0FAB74195AB36E9E80A6D7BD4 /* EasyPopUp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3446EEA4D6B3CB13607D1A839430B4F7 /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Example" */;
+			buildConfigurationList = 7CB14BC15FD77AC7D8595385D34FDD9F /* Build configuration list for PBXNativeTarget "EasyPopUp" */;
 			buildPhases = (
-				53F241759246608EACF491816ECD72D5 /* Sources */,
-				F43BF5BFADFAEC530BF85447926758E2 /* Frameworks */,
-				A44EAB5FB516FFEAB5B9403BD444C1CC /* Headers */,
+				FE80C45E8B3675C07A6220C3E0A1E9CF /* Sources */,
+				E0442DAC667EE109D45F41081CA0B2BE /* Frameworks */,
+				FD7A4FF6B82F0DD486083591FD0BB09B /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D1064C029D28DD46F141B83C7F4232DA /* PBXTargetDependency */,
+				F53EF639F302DA14B83CB9FF33F78908 /* PBXTargetDependency */,
+			);
+			name = EasyPopUp;
+			productName = EasyPopUp;
+			productReference = 8CE572E0A2A953D404C1B98EC88FCC32 /* EasyPopUp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AD6E417B292CCB529632F0FA6F2EFEC /* DynamicBlurView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF1B3C8A74EE5F0BA8EEA33D98DC56D1 /* Build configuration list for PBXNativeTarget "DynamicBlurView" */;
+			buildPhases = (
+				2343253744ADE559BBDEC4EC41F51B6D /* Sources */,
+				81668173AE602C46A6D214E9B4F84F91 /* Frameworks */,
+				5780D23677E756CCB12940F250B0F6FD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicBlurView;
+			productName = DynamicBlurView;
+			productReference = 08388F563F3F8F0123E19321E0FFCFCA /* DynamicBlurView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F05F91AD341CBE01DBA7C1618877560A /* Pods-EasyPopUp_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8545F755B3210EFAE07A7C75860D5EAF /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Example" */;
+			buildPhases = (
+				44D14928509447CAEFCA4AC96B8C2846 /* Sources */,
+				37608EB9AE41120167AEB6BFD44DFF85 /* Frameworks */,
+				58B9756C66110B44D7D93CFA185E24CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F68AB2217E22B451D742AA567A90E727 /* PBXTargetDependency */,
+				5E533B9511A2858AADFAC70F3C79190B /* PBXTargetDependency */,
 			);
 			name = "Pods-EasyPopUp_Example";
 			productName = "Pods-EasyPopUp_Example";
-			productReference = 70BE190E2B22D7560C98903F60CBC2E6 /* Pods_EasyPopUp_Example.framework */;
+			productReference = EA1D28520FF4E50E9EA0121AA6AEF743 /* Pods_EasyPopUp_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -327,62 +465,161 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 31D1756A9C6A383453B30818248D6E92 /* Products */;
+			productRefGroup = 9FFBEEC96E44C4C41532FCB8986FAB99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B7E9B01184B176F2B936AE380A02DC4 /* EasyPopUp */,
-				DA964326728A841ADD6576C237DFAF51 /* Pods-EasyPopUp_Example */,
-				836727A3521AB9050B2D489E60E69A1C /* Pods-EasyPopUp_Tests */,
+				9AD6E417B292CCB529632F0FA6F2EFEC /* DynamicBlurView */,
+				8F80DDD0FAB74195AB36E9E80A6D7BD4 /* EasyPopUp */,
+				F05F91AD341CBE01DBA7C1618877560A /* Pods-EasyPopUp_Example */,
+				0BE3C723286A36F86DCB0BCDF84B283A /* Pods-EasyPopUp_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		190411B6ED0976F52673636571448A5E /* Sources */ = {
+		2343253744ADE559BBDEC4EC41F51B6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA2842B70E31663593F226B3EB240CF /* Pods-EasyPopUp_Tests-dummy.m in Sources */,
+				9584B98DAE3E860B6AB5EA9781DC7057 /* BlurLayer.swift in Sources */,
+				72763BA40BBEB214F29FF33DE5FB907C /* CaptureQuality.swift in Sources */,
+				FB5CECAD4729CF846E332E692D1673B1 /* CGContext+CGImage.swift in Sources */,
+				5D19BAE8B0155836806C26876E2F812A /* CGImage+Accelerate.swift in Sources */,
+				0F979D0A878062EA1DFD82B4ACE22C01 /* DynamicBlurView-dummy.m in Sources */,
+				608FF6E4BCB0660D1D6D9DB0FF6B22FC /* DynamicBlurView.swift in Sources */,
+				C2DB0E4B4EC4B4DF8EA4B96FB78FBA99 /* TrackingMode.swift in Sources */,
+				82BD34CDF279D0AC1810CDE02EF4C156 /* UIImage+Blur.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53F241759246608EACF491816ECD72D5 /* Sources */ = {
+		44D14928509447CAEFCA4AC96B8C2846 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7295120E96D7C38E85A3F96FB0CBE0 /* Pods-EasyPopUp_Example-dummy.m in Sources */,
+				31AD5EB7579AC3BAE8DD87B5E23CC6EE /* Pods-EasyPopUp_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E7B10E371661BAB6BD369E3D6D19A5E /* Sources */ = {
+		67491AC6D69D8DFA42A0BB38FB9815B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09BBCFD1450B7F6A5F27D8A9E6606159 /* EasyPopUp-dummy.m in Sources */,
-				243ADE3380EA6B82252002AFC9EA15ED /* ReplaceMe.swift in Sources */,
+				18E6B3D32EC058E94723B7176F6625E2 /* Pods-EasyPopUp_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE80C45E8B3675C07A6220C3E0A1E9CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96C98BEACE77C1100DDC8524DCBE4FE /* EasyPopUp-dummy.m in Sources */,
+				10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D1064C029D28DD46F141B83C7F4232DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EasyPopUp;
-			target = 6B7E9B01184B176F2B936AE380A02DC4 /* EasyPopUp */;
-			targetProxy = E51E060177A34D3FCAFB8F279FE9479C /* PBXContainerItemProxy */;
-		};
-		E46CB41195DB4400BF4BE9028A23A96C /* PBXTargetDependency */ = {
+		5E2D2E00B5DC1A3BC96330B1A5B53E52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-EasyPopUp_Example";
-			target = DA964326728A841ADD6576C237DFAF51 /* Pods-EasyPopUp_Example */;
-			targetProxy = BFB6EB2535CBEE00C35A4422BCFF95F6 /* PBXContainerItemProxy */;
+			target = F05F91AD341CBE01DBA7C1618877560A /* Pods-EasyPopUp_Example */;
+			targetProxy = 34983AB01AF008A8BC13E59239BF6BC3 /* PBXContainerItemProxy */;
+		};
+		5E533B9511A2858AADFAC70F3C79190B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EasyPopUp;
+			target = 8F80DDD0FAB74195AB36E9E80A6D7BD4 /* EasyPopUp */;
+			targetProxy = 1D2609DD002A7EC33EC0E46787A7F3E1 /* PBXContainerItemProxy */;
+		};
+		9724167544913A3EFF104B7ADB12AA62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DynamicBlurView;
+			target = 9AD6E417B292CCB529632F0FA6F2EFEC /* DynamicBlurView */;
+			targetProxy = 12659D11CB4CFDAECD3F45FB121BA579 /* PBXContainerItemProxy */;
+		};
+		F53EF639F302DA14B83CB9FF33F78908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DynamicBlurView;
+			target = 9AD6E417B292CCB529632F0FA6F2EFEC /* DynamicBlurView */;
+			targetProxy = F26768B7D17C19C7DCD7DE9AAD3A9DCA /* PBXContainerItemProxy */;
+		};
+		F68AB2217E22B451D742AA567A90E727 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DynamicBlurView;
+			target = 9AD6E417B292CCB529632F0FA6F2EFEC /* DynamicBlurView */;
+			targetProxy = 0645A4127D7A73F92E3ABA9C78427593 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		110CBD5521B9E0AA0D9AB3768CACB384 /* Debug */ = {
+		0BC7908DD34ACBD07B972C1E82AC4191 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B7E179E2A508359886B685CA0A6D8E6 /* DynamicBlurView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicBlurView/DynamicBlurView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicBlurView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicBlurView/DynamicBlurView.modulemap";
+				PRODUCT_MODULE_NAME = DynamicBlurView;
+				PRODUCT_NAME = DynamicBlurView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2F18AB70B4BC9E708B9E9F259501A306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B7E179E2A508359886B685CA0A6D8E6 /* DynamicBlurView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DynamicBlurView/DynamicBlurView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DynamicBlurView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DynamicBlurView/DynamicBlurView.modulemap";
+				PRODUCT_MODULE_NAME = DynamicBlurView;
+				PRODUCT_NAME = DynamicBlurView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		64036B5D999717AFDA8A50DD8DAEB537 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBC1B23FFC8702A151AFFEA15D000D5A /* Pods-EasyPopUp_Example.debug.xcconfig */;
 			buildSettings = {
@@ -416,107 +653,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		64E9B986FC114CECC8B05542A45E004A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6C0FDFFD0DF23F896B5EE444EF627C0 /* Pods-EasyPopUp_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EasyPopUp_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EasyPopUp_Tests/Pods-EasyPopUp_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		87104AB1965588B33F7CCBA68A9CA5CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F58B87F28717C17CAAF15F2D49B7D360 /* EasyPopUp.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EasyPopUp/EasyPopUp-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EasyPopUp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EasyPopUp/EasyPopUp.modulemap";
-				PRODUCT_MODULE_NAME = EasyPopUp;
-				PRODUCT_NAME = EasyPopUp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		89B7A996E962FB68B1A9196E1F5161AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFD4A0EDDEEF8E165DCEA4319D94CEFE /* Pods-EasyPopUp_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EasyPopUp_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EasyPopUp_Example/Pods-EasyPopUp_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -581,10 +717,11 @@
 			};
 			name = Debug;
 		};
-		97D1D1F43B805A34890F0B4F1249192B /* Release */ = {
+		A93350E6AC9B59036373B4A412532F76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F58B87F28717C17CAAF15F2D49B7D360 /* EasyPopUp.xcconfig */;
+			baseConfigurationReference = 5E24D6C558AAADF40CC13DDD9752ECEE /* Pods-EasyPopUp_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -594,25 +731,26 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EasyPopUp/EasyPopUp-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EasyPopUp/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-EasyPopUp_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EasyPopUp/EasyPopUp.modulemap";
-				PRODUCT_MODULE_NAME = EasyPopUp;
-				PRODUCT_NAME = EasyPopUp;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EasyPopUp_Tests/Pods-EasyPopUp_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -672,9 +810,109 @@
 			};
 			name = Release;
 		};
-		C19C5C72D093C12D08A43A1A4CA858BA /* Debug */ = {
+		B8D6500F2C3EC2A70EBFB000D2C95CEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E24D6C558AAADF40CC13DDD9752ECEE /* Pods-EasyPopUp_Tests.debug.xcconfig */;
+			baseConfigurationReference = 5EE5B180AF5F62FA6997279E8DA3F82E /* EasyPopUp.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EasyPopUp/EasyPopUp-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EasyPopUp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EasyPopUp/EasyPopUp.modulemap";
+				PRODUCT_MODULE_NAME = EasyPopUp;
+				PRODUCT_NAME = EasyPopUp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4121A1CC3DD7335BBF145BA9B6BB174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EE5B180AF5F62FA6997279E8DA3F82E /* EasyPopUp.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EasyPopUp/EasyPopUp-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EasyPopUp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EasyPopUp/EasyPopUp.modulemap";
+				PRODUCT_MODULE_NAME = EasyPopUp;
+				PRODUCT_NAME = EasyPopUp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5AA0764D07CB463CB0045960AB3AB6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFD4A0EDDEEF8E165DCEA4319D94CEFE /* Pods-EasyPopUp_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EasyPopUp_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EasyPopUp_Example/Pods-EasyPopUp_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D9C479593491C1CF3936AF2EA5FC00BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C0FDFFD0DF23F896B5EE444EF627C0 /* Pods-EasyPopUp_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -699,11 +937,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -717,29 +957,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3446EEA4D6B3CB13607D1A839430B4F7 /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Example" */ = {
+		6993F5063CB37DD490EE1DA670F52BC1 /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				110CBD5521B9E0AA0D9AB3768CACB384 /* Debug */,
-				89B7A996E962FB68B1A9196E1F5161AC /* Release */,
+				A93350E6AC9B59036373B4A412532F76 /* Debug */,
+				D9C479593491C1CF3936AF2EA5FC00BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E3A3257E01BD780152C576D8AE973A0 /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Tests" */ = {
+		7CB14BC15FD77AC7D8595385D34FDD9F /* Build configuration list for PBXNativeTarget "EasyPopUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C19C5C72D093C12D08A43A1A4CA858BA /* Debug */,
-				64E9B986FC114CECC8B05542A45E004A /* Release */,
+				B8D6500F2C3EC2A70EBFB000D2C95CEF /* Debug */,
+				D4121A1CC3DD7335BBF145BA9B6BB174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAA465E7EA23D538F0230B09EC9B57B7 /* Build configuration list for PBXNativeTarget "EasyPopUp" */ = {
+		8545F755B3210EFAE07A7C75860D5EAF /* Build configuration list for PBXNativeTarget "Pods-EasyPopUp_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87104AB1965588B33F7CCBA68A9CA5CC /* Debug */,
-				97D1D1F43B805A34890F0B4F1249192B /* Release */,
+				64036B5D999717AFDA8A50DD8DAEB537 /* Debug */,
+				D5AA0764D07CB463CB0045960AB3AB6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF1B3C8A74EE5F0BA8EEA33D98DC56D1 /* Build configuration list for PBXNativeTarget "DynamicBlurView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BC7908DD34ACBD07B972C1E82AC4191 /* Debug */,
+				2F18AB70B4BC9E708B9E9F259501A306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import EasyPopUp
+
 
 class ViewController: UIViewController {
 
