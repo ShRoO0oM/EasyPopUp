@@ -1,0 +1,6 @@
+framework module EasyPopUp {
+  umbrella header "EasyPopUp-umbrella.h"
+
+  export *
+  module * { export * }
+}

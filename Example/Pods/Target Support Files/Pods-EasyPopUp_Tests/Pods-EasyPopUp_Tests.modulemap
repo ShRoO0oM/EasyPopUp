@@ -1,0 +1,6 @@
+framework module Pods_EasyPopUp_Tests {
+  umbrella header "Pods-EasyPopUp_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

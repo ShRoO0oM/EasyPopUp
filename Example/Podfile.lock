@@ -1,0 +1,16 @@
+PODS:
+  - EasyPopUp (0.1.0)
+
+DEPENDENCIES:
+  - EasyPopUp (from `../`)
+
+EXTERNAL SOURCES:
+  EasyPopUp:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EasyPopUp: 48678620abe04fbecbf8a68cacd374c3da59891e
+
+PODFILE CHECKSUM: f52e593b10eac72fa9b610eac84a67b33f7b2307
+
+COCOAPODS: 1.5.0
