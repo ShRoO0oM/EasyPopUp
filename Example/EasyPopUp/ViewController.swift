@@ -8,6 +8,7 @@
 
 import UIKit
 import EasyPopUp
+import DynamicBlurView
 
 
 class ViewController: UIViewController {
