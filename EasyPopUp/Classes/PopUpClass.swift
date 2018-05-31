@@ -18,16 +18,16 @@ public class EasyPopup {
     private var backView : UIView!
     private var superView : UIView
     private var popupView : UIView
-    private var config : EasyPopupConfig
+    public var config : EasyPopupConfig
     
     
     public init(superView:UIView,viewTopop view:UIView, config:EasyPopupConfig) {
-
+        
         self.superView = superView
         self.popupView = view
         self.config = config
         
-    
+        
     }
     public func Showpopup(completion : ((Bool)->Void)?) {
         let CenterFrame =  CGRect(x: (superView.frame.width)/2 - (popupView.frame.width)/2,
@@ -42,20 +42,20 @@ public class EasyPopup {
         if config.autoDismiss {
             self.addTapGesture()
         }
-//        if config.blurBackground {
-//            //            blurView = DynamicBlurView(frame: (popup.superview!.bounds))
-//            //            blurView?.blurRadius = 0
-//            //            blurView?.drawsAsynchronously = true
-//            //            blurView?.trackingMode = .common
-//            //          self.popupview!.superview!.addSubview(blurView!)
-//        }
+        //        if config.blurBackground {
+        //            //            blurView = DynamicBlurView(frame: (popup.superview!.bounds))
+        //            //            blurView?.blurRadius = 0
+        //            //            blurView?.drawsAsynchronously = true
+        //            //            blurView?.trackingMode = .common
+        //            //          self.popupview!.superview!.addSubview(blurView!)
+        //        }
         superView.addSubview(popupView)
         superView.bringSubview(toFront: popupView)
         switch config.animationType {
         case .scale:
             popupView.frame = CenterFrame
             popupView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-            UIView.animate(withDuration: config.animaionDuration, animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
                 self.popupView.transform = CGAffineTransform.identity
                 if self.config.blurBackground {
@@ -66,20 +66,72 @@ public class EasyPopup {
             
             popupView.frame = CGRect(x: (superView.frame.width)/2 - popupView.frame.width/2, y: -(popupView.frame.height), width: popupView.frame.width, height: popupView.frame.height)
             
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: .curveEaseOut , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
                 self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                     y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                     width: self.popupView.frame.width,
-                                     height: self.popupView.frame.height)
+                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
                 if self.config.blurBackground {
                     //  self.blurView?.blurRadius = 10
                 }
             }, completion: completion)
             
             break
-        default :
-            break
+        case .downToUp:
+            popupView.frame = CGRect(x: (superView.frame.width)/2 - popupView.frame.width/2, y: (superView.frame.height), width: popupView.frame.width, height: popupView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                if self.config.blurBackground {
+                    //  self.blurView?.blurRadius = 10
+                }
+            }, completion: completion)
+        case .leftToright:
+            popupView.frame = CGRect(x: -popupView.frame.width
+                , y: (self.superView.frame.height)/2 - self.popupView.frame.height/2
+                , width: popupView.frame.width
+                , height: popupView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                if self.config.blurBackground {
+                    //  self.blurView?.blurRadius = 10
+                }
+            }, completion: completion)
+        case .rightToleft:
+            popupView.frame = CGRect(x: superView.frame.width
+                , y: (self.superView.frame.height)/2 - self.popupView.frame.height/2
+                , width: popupView.frame.width
+                , height: popupView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                if self.config.blurBackground {
+                    //  self.blurView?.blurRadius = 10
+                }
+            }, completion: completion)
+        case .immediate:
+            self.backView?.alpha = 0.5
+            self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+                                          y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                          width: self.popupView.frame.width,
+                                          height: self.popupView.frame.height)
+            if self.config.blurBackground {
+                //  self.blurView?.blurRadius = 10
+            }
         }
         
         //        popup.addShadowForRoundedButton(withCorner: 10)
@@ -93,60 +145,75 @@ public class EasyPopup {
         
         
     }
-    //    func RemovePopUp(popup:UIView,animation:AnimationType = .UP,callback: (@escaping (Bool)->Void) = {_ in }){
-    //        guard let _ = popup.superview else {
-    //            return
-    //        }
-    //        switch animation {
-    //        case .Immediate:
-    //            // no animation and remove from superview
-    //            for subview in (popup.superview?.subviews)! {
-    //                if subview.tag == 5 {
-    //                    popup.removeFromSuperview()
-    //                    subview.removeFromSuperview()
-    //                }
-    //            }
-    //          //  self.blurView?.removeFromSuperview()
-    //            callback(true)
-    //            return
-    //        case .compress:
-    //            print("not supported yet")
-    //            break
-    //        case .Scale:
-    //            UIView.animate(withDuration: 0.5, animations: {
-    //                popup.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-    //            }, completion: { (isfinished) in
-    //                if isfinished {
-    //
-    //                }
-    //            })
-    //            break
-    //        case .UP :
-    //
-    //            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut , animations: {
-    //                popup.frame = CGRect(x: popup.frame.origin.x,
-    //                                     y: (popup.superview?.frame.maxY)!,
-    //                                     width: popup.frame.width,
-    //                                     height: popup.frame.height)
-    //            }, completion: { finished in
-    //
-    //            })
-    //
-    //            break
-    //        }
-    //        print(popup.frame)
-    //        for subview in (popup.superview?.subviews)! {
-    //            if subview.tag == 5 {
-    //                UIView.animate(withDuration: 1, animations:{subview.alpha = 0}, completion: { (isfinished) in
-    //                        subview.removeFromSuperview()
-    //                        popup.removeFromSuperview()
-    //                    print(isfinished)
-    //                })
-    //            }
-    //        }
-    // //       self.blurView?.removeFromSuperview()
-    //        callback(true)
-    //}
+    public func RemovePopUp(completion : ((Bool)->Void)? ){
+        
+        switch config.animationType {
+            
+        case .upToDown :
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
+                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+                                              y: self.superView.frame.height,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                self.backView?.alpha = 0
+            }) { (finished) in
+                completion?(finished)
+                self.popupView.removeFromSuperview()
+                self.backView.removeFromSuperview()
+            }
+        case .downToUp:
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
+                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+                                              y: -self.popupView.frame.height,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                self.backView?.alpha = 0
+            }) { (finished) in
+                completion?(finished)
+                self.popupView.removeFromSuperview()
+                self.backView.removeFromSuperview()
+            }
+        case .scale:
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
+                self.popupView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                self.backView?.alpha = 0
+            }) { (finished) in
+                completion?(finished)
+                self.popupView.transform = CGAffineTransform.identity
+                self.popupView.removeFromSuperview()
+                self.backView.removeFromSuperview()
+            }
+        case .leftToright :
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
+                self.popupView.frame = CGRect(x: self.superView.frame.width,
+                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                self.backView?.alpha = 0
+            }) { (finished) in
+                completion?(finished)
+                self.popupView.removeFromSuperview()
+                self.backView.removeFromSuperview()
+            }
+        case .rightToleft:
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
+                self.popupView.frame = CGRect(x: -self.popupView.frame.width,
+                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
+                                              width: self.popupView.frame.width,
+                                              height: self.popupView.frame.height)
+                self.backView?.alpha = 0
+            }) { (finished) in
+                completion?(finished)
+                self.popupView.removeFromSuperview()
+                self.backView.removeFromSuperview()
+            }
+        case .immediate :
+            self.backView?.alpha = 0
+            self.popupView.removeFromSuperview()
+            self.backView.removeFromSuperview()
+        }
+    }
+ 
     // adding dimView to superView
     private func addDimView(){
         backView = UIView(frame: superView.bounds)
@@ -163,7 +230,6 @@ public class EasyPopup {
             backView.backgroundColor = .clear
         }
         backView.addTapGestureRecognizer(action: RemovepopupFromBlackView)
-        backView.isUserInteractionEnabled = true
     }
     // function for removing popup on tapping of superview
     @objc private func RemovepopupFromBlackView(){
@@ -171,9 +237,9 @@ public class EasyPopup {
         UIView.animate(withDuration: config.animaionDuration, animations: {
             self.backView.alpha = 0
         }, completion: { (isfinished) in
-                self.popupView.removeFromSuperview()
-                self.backView.removeFromSuperview()
-                self.popupView.alpha = 1
+            self.popupView.removeFromSuperview()
+            self.backView.removeFromSuperview()
+            self.popupView.alpha = 1
         })
     }
     

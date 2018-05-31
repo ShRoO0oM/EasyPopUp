@@ -8,17 +8,18 @@
 import UIKit
 
 public struct EasyPopupConfig {
-    var shadowColor : CGColor
-    var shadowRadius: CGFloat
-    var cornerRadius: CGFloat
-    var shadowOpacity : CGFloat
-    var dimBackground : Bool
-    var blurBackground : Bool
-    var autoDismiss: Bool
-    var animationType: AnimationType = .upToDown
-    var animaionDuration : TimeInterval = 0.3
+    public var shadowColor : CGColor
+    public var shadowRadius: CGFloat
+    public var cornerRadius: CGFloat
+    public var shadowOpacity : CGFloat
+    public var dimBackground : Bool
+    public var blurBackground : Bool
+    public var autoDismiss: Bool
+    public var animationType: AnimationType = .upToDown
+    public var animaionDuration : TimeInterval = 0.3
+    public var animtionOptions: UIViewAnimationOptions
     
-    public init(shadowColor:CGColor,shadowRadius:CGFloat,cornerRadius:CGFloat,shadowOpacity:CGFloat,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown ,animaionDuration :TimeInterval = 0.3 ) {
+    public init(shadowColor:CGColor = UIColor.clear.cgColor ,shadowRadius:CGFloat = 0,cornerRadius:CGFloat = 0,shadowOpacity:CGFloat = 0,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown,animtionOptions : UIViewAnimationOptions = UIViewAnimationOptions.beginFromCurrentState ,animaionDuration :TimeInterval = 0.3 ) {
         self.shadowColor = shadowColor
         self.shadowRadius = shadowRadius
         self.cornerRadius = cornerRadius
@@ -28,6 +29,7 @@ public struct EasyPopupConfig {
         self.autoDismiss = autoDismiss
         self.animationType = animationType
         self.animaionDuration = animaionDuration
+        self.animtionOptions = animtionOptions
     }
 }
 
