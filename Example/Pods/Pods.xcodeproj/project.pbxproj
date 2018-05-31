@@ -27,6 +27,8 @@
 		72763BA40BBEB214F29FF33DE5FB907C /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA899F5A146F7D8F05AD7064636F980 /* CaptureQuality.swift */; };
 		7B29684CD3D29B0354EA9056BFABB546 /* Pods-EasyPopUp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAD04BA062EF0AF598E3C07D4DB44E6 /* Pods-EasyPopUp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82BD34CDF279D0AC1810CDE02EF4C156 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3452325E1CBC35AF8CF1CB10273A9617 /* UIImage+Blur.swift */; };
+		83CF3F6220BFDD780054AE8D /* AnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF3F6020BFDA5C0054AE8D /* AnimationTypes.swift */; };
+		83CF3F6520BFDDE00054AE8D /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF3F6320BFDDC70054AE8D /* Extentions.swift */; };
 		9584B98DAE3E860B6AB5EA9781DC7057 /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E833FD317D38E463416EE2BA33425F /* BlurLayer.swift */; };
 		C2DB0E4B4EC4B4DF8EA4B96FB78FBA99 /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65426B2F39A33CF0D5D980378D4880D9 /* TrackingMode.swift */; };
 		C96C98BEACE77C1100DDC8524DCBE4FE /* EasyPopUp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26131D7B0A66457F04A7486E593E2ABD /* EasyPopUp-dummy.m */; };
@@ -95,6 +97,8 @@
 		65426B2F39A33CF0D5D980378D4880D9 /* TrackingMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TrackingMode.swift; path = DynamicBlurView/TrackingMode.swift; sourceTree = "<group>"; };
 		7B7E179E2A508359886B685CA0A6D8E6 /* DynamicBlurView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DynamicBlurView.xcconfig; sourceTree = "<group>"; };
 		7C08474D52BCBB2E550CBDD75332B6D4 /* DynamicBlurView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicBlurView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83CF3F6020BFDA5C0054AE8D /* AnimationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTypes.swift; sourceTree = "<group>"; };
+		83CF3F6320BFDDC70054AE8D /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extentions.swift; path = EasyPopUp/Classes/Extentions.swift; sourceTree = "<group>"; };
 		84D78E377D5B786E82B7AD2C7DAC09CD /* Pods-EasyPopUp_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPopUp_Example-dummy.m"; sourceTree = "<group>"; };
 		8795A67677B6E5C389DEAFDBF64EAAF5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CE572E0A2A953D404C1B98EC88FCC32 /* EasyPopUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyPopUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				2AAA1341F51CBCE036B7DE8DE5A4D4BD /* PopUpClass.swift */,
+				83CF3F6020BFDA5C0054AE8D /* AnimationTypes.swift */,
+				83CF3F6320BFDDC70054AE8D /* Extentions.swift */,
 				2A87C6BD2985946A84B2859D43BEF9B8 /* Pod */,
 				14797BE6F8AA208DF9E040750205D343 /* Support Files */,
 			);
@@ -513,7 +519,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CF3F6520BFDDE00054AE8D /* Extentions.swift in Sources */,
 				C96C98BEACE77C1100DDC8524DCBE4FE /* EasyPopUp-dummy.m in Sources */,
+				83CF3F6220BFDD780054AE8D /* AnimationTypes.swift in Sources */,
 				10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

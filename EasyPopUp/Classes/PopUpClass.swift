@@ -12,14 +12,8 @@ import DynamicBlurView
 public class PopUpClass {
     
     
-    enum AnimationType : String {
-        case Scale = "Scale"
-        case UP = "Up"
-        case compress = "compress"
-        case Immediate = "Immediate"
-    }
+    
     var popupview : UIView?
-    static public var instance = PopUpClass()
     var CenterFrame : CGRect!
     public var blurView : DynamicBlurView?
     
@@ -165,20 +159,5 @@ public class PopUpClass {
  //       self.blurView?.removeFromSuperview()
         callback(true)
     }
-//    func AnimateTovc(duration:Float = 0.5,Animateoption:UIViewAnimationOptions = .transitionFlipFromLeft,ViewControllerToAnimate vc:UIViewController,vctoDissmiss: UIViewController?,completion : @escaping ()->Void = {} ){
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        UIView.transition(with: appDelegate.window!, duration: TimeInterval(duration), options: Animateoption , animations: { () -> Void in
-//            appDelegate.window!.rootViewController = vc
-//        }, completion:{ isfinished in
-//            completion()
-//            vctoDissmiss?.dismiss(animated: false, completion: nil)
-//        })
-//    }
 }
-extension UIView {
-    var TheScreen : CGRect {
-        get {
-            return UIScreen.main.bounds
-        }
-    }
-}
+
