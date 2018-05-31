@@ -8,15 +8,27 @@
 import UIKit
 
 public struct EasyPopupConfig {
-    public var shadowColor : CGColor
-    public var shadowRadius: CGFloat
-    public var cornerRadius: CGFloat
-    public var shadowOpacity : CGFloat
-    public var dimBackground : Bool = true
-    public var blurBackground : Bool = false
-    public var autoDismiss: Bool = true
-    public var animationType: AnimationType = .upToDown
-    public var animaionDuration : TimeInterval = 0.3
+    var shadowColor : CGColor
+    var shadowRadius: CGFloat
+    var cornerRadius: CGFloat
+    var shadowOpacity : CGFloat
+    var dimBackground : Bool
+    var blurBackground : Bool
+    var autoDismiss: Bool
+    var animationType: AnimationType = .upToDown
+    var animaionDuration : TimeInterval = 0.3
+    
+    public init(shadowColor:CGColor,shadowRadius:CGFloat,cornerRadius:CGFloat,shadowOpacity:CGFloat,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown ,animaionDuration :TimeInterval = 0.3 ) {
+        self.shadowColor = shadowColor
+        self.shadowRadius = shadowRadius
+        self.cornerRadius = cornerRadius
+        self.shadowOpacity = shadowOpacity
+        self.dimBackground = dimBackground
+        self.blurBackground = blurBackground
+        self.autoDismiss = autoDismiss
+        self.animationType = animationType
+        self.animaionDuration = animaionDuration
+    }
 }
 
 

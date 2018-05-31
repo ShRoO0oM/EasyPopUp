@@ -26,6 +26,8 @@ public class EasyPopup {
         self.superView = superView
         self.popupView = view
         self.config = config
+        
+    
     }
     
     

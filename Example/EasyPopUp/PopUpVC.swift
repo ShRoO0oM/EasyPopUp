@@ -17,10 +17,16 @@ class PopUpVC: UIViewController {
 
     @IBAction func showPopUpDownToUp(_ sender: Any) {
      
-      //  let popUp = EasyPopup(superView: self.view, viewTopop: viewToPop, config: <#T##EasyPopupConfig#>)
+        
     }
     @IBAction func showPopUpUpToDown(_ sender: Any) {
+        let config = EasyPopupConfig(shadowColor: UIColor.red.cgColor, shadowRadius: 0, cornerRadius: 0, shadowOpacity: 0, dimBackground: true, blurBackground: false, autoDismiss: true, animationType: .upToDown, animaionDuration: 0.4)
         
+        let popUpView = EasyPopup(superView: self.view, viewTopop: viewToPop, config: config)
+        
+        popUpView.Showpopup { (isfinished) in
+            print(isfinished)
+        }
     }
     @IBAction func removePopUp(_ sender: Any) {
         
