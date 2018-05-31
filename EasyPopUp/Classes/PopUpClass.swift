@@ -15,7 +15,7 @@ public class EasyPopup {
     
     
     private var blurView : DynamicBlurView?
-    private var blackView : UIView?
+    private var backView : UIView!
     private var superView : UIView
     private var popupView : UIView
     private var config : EasyPopupConfig
@@ -29,35 +29,34 @@ public class EasyPopup {
         
     
     }
-    
-    
-    //
     public func Showpopup(completion : ((Bool)->Void)?) {
         let CenterFrame =  CGRect(x: (superView.frame.width)/2 - (popupView.frame.width)/2,
                                   y: (superView.frame.height)/2 - (popupView.frame.height)/2,
                                   width: popupView.frame.width,
                                   height: popupView.frame.height)
         // preapring view with config file
-        superView.addSubview(popupView)
-        superView.bringSubview(toFront: popupView)
+        
         if config.dimBackground {
             self.addDimView()
         }
         if config.autoDismiss {
             self.addTapGesture()
         }
-        if config.blurBackground {
-            //            blurView = DynamicBlurView(frame: (popup.superview!.bounds))
-            //            blurView?.blurRadius = 0
-            //            blurView?.drawsAsynchronously = true
-            //            blurView?.trackingMode = .common
-            //          self.popupview!.superview!.addSubview(blurView!)
-        }
+//        if config.blurBackground {
+//            //            blurView = DynamicBlurView(frame: (popup.superview!.bounds))
+//            //            blurView?.blurRadius = 0
+//            //            blurView?.drawsAsynchronously = true
+//            //            blurView?.trackingMode = .common
+//            //          self.popupview!.superview!.addSubview(blurView!)
+//        }
+        superView.addSubview(popupView)
+        superView.bringSubview(toFront: popupView)
         switch config.animationType {
         case .scale:
             popupView.frame = CenterFrame
             popupView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
             UIView.animate(withDuration: config.animaionDuration, animations: {
+                self.backView.alpha = 0.5
                 self.popupView.transform = CGAffineTransform.identity
                 if self.config.blurBackground {
                     //  self.blurView?.blurRadius = 10
@@ -67,7 +66,8 @@ public class EasyPopup {
             
             popupView.frame = CGRect(x: (superView.frame.width)/2 - popupView.frame.width/2, y: -(popupView.frame.height), width: popupView.frame.width, height: popupView.frame.height)
             
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: .curveEaseOut , animations: {
+                self.backView?.alpha = 0.5
                 self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
                                      y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
                                      width: self.popupView.frame.width,
@@ -149,25 +149,32 @@ public class EasyPopup {
     //}
     // adding dimView to superView
     private func addDimView(){
-        blackView = UIView(frame: superView.bounds)
-        blackView?.backgroundColor = UIColor.darkGray
-        blackView?.alpha = 0.5
-        blackView?.isOpaque = true
+        backView = UIView(frame: superView.bounds)
+        superView.addSubview(backView)
+        backView.backgroundColor = UIColor.darkGray
+        backView.alpha = 0
+        backView.isOpaque = true
     }
     // adding tapGesture to dismiss popupView
     private func addTapGesture(){
-        superView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(RemovepopupFromBlackView)))
+        if backView == nil {
+            backView = UIView(frame: superView.bounds)
+            superView.addSubview(backView)
+            backView.backgroundColor = .clear
+        }
+        backView.addTapGestureRecognizer(action: RemovepopupFromBlackView)
+        backView.isUserInteractionEnabled = true
     }
     // function for removing popup on tapping of superview
     @objc private func RemovepopupFromBlackView(){
         self.popupView.alpha = 0
         UIView.animate(withDuration: config.animaionDuration, animations: {
-            self.blackView?.alpha = 0
+            self.backView.alpha = 0
         }, completion: { (isfinished) in
                 self.popupView.removeFromSuperview()
-                self.blackView?.removeFromSuperview()
+                self.backView.removeFromSuperview()
+                self.popupView.alpha = 1
         })
     }
     
 }
-

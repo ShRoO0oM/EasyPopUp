@@ -14,11 +14,11 @@ class PopUpVC: UIViewController {
 
     @IBOutlet var viewToPop: UIView!
     
-
     @IBAction func showPopUpDownToUp(_ sender: Any) {
      
         
     }
+    
     @IBAction func showPopUpUpToDown(_ sender: Any) {
         let config = EasyPopupConfig(shadowColor: UIColor.red.cgColor, shadowRadius: 0, cornerRadius: 0, shadowOpacity: 0, dimBackground: true, blurBackground: false, autoDismiss: true, animationType: .upToDown, animaionDuration: 0.4)
         
