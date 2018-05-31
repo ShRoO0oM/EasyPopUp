@@ -14,7 +14,7 @@ class PopupVC: UIViewController {
 
     @IBOutlet var viewToPop: UIView!
     
-    var config = EasyPopupConfig(shadowColor: UIColor.red.cgColor, shadowRadius: 0, cornerRadius: 0, shadowOpacity: 0, dimBackground: true, blurBackground: false, autoDismiss: true, animationType: .upToDown, animaionDuration: 0.4)
+    var config = EasyPopupConfig(shadowColor: UIColor.red.cgColor, shadowRadius: 0, cornerRadius: 0, shadowOpacity: 0, dimBackground: true, blurBackground: true, autoDismiss: true, animationType: .upToDown, animaionDuration: 0.4)
     
     lazy var popUpView : EasyPopup = {
         let easePopUp = EasyPopup(superView: self.view, viewTopop: viewToPop, config: config)

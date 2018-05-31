@@ -14,14 +14,16 @@ public class EasyPopup {
     
     
     
-    private var blurView : DynamicBlurView?
+    
     private var backView : UIView!
     private var superView : UIView
     private var popupView : UIView
+    
     public var config : EasyPopupConfig
+    public var blurView : DynamicBlurView?
     
     
-    public init(superView:UIView,viewTopop view:UIView, config:EasyPopupConfig) {
+    public init(superView:UIView,viewTopop view:UIView, config:EasyPopupConfig = EasyPopupConfig() ) {
         
         self.superView = superView
         self.popupView = view
@@ -42,13 +44,12 @@ public class EasyPopup {
         if config.autoDismiss {
             self.addTapGesture()
         }
-        //        if config.blurBackground {
-        //            //            blurView = DynamicBlurView(frame: (popup.superview!.bounds))
-        //            //            blurView?.blurRadius = 0
-        //            //            blurView?.drawsAsynchronously = true
-        //            //            blurView?.trackingMode = .common
-        //            //          self.popupview!.superview!.addSubview(blurView!)
-        //        }
+        if config.blurBackground {
+            blurView = DynamicBlurView(frame: superView.bounds)
+            blurView?.blurRadius = 0
+            blurView?.trackingMode = .common
+            superView.addSubview(blurView!)
+        }
         superView.addSubview(popupView)
         superView.bringSubview(toFront: popupView)
         switch config.animationType {
@@ -58,9 +59,7 @@ public class EasyPopup {
             UIView.animate(withDuration: config.animaionDuration, delay: 0 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
                 self.popupView.transform = CGAffineTransform.identity
-                if self.config.blurBackground {
-                    //  self.blurView?.blurRadius = 10
-                }
+                self.blurView?.blurRadius = 10
             }, completion : completion)
         case .upToDown :
             
@@ -72,9 +71,7 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
-                if self.config.blurBackground {
-                    //  self.blurView?.blurRadius = 10
-                }
+                self.blurView?.blurRadius = 10
             }, completion: completion)
             
             break
@@ -87,9 +84,7 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
-                if self.config.blurBackground {
-                    //  self.blurView?.blurRadius = 10
-                }
+                self.blurView?.blurRadius = 10
             }, completion: completion)
         case .leftToright:
             popupView.frame = CGRect(x: -popupView.frame.width
@@ -103,9 +98,7 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
-                if self.config.blurBackground {
-                    //  self.blurView?.blurRadius = 10
-                }
+                self.blurView?.blurRadius = 10
             }, completion: completion)
         case .rightToleft:
             popupView.frame = CGRect(x: superView.frame.width
@@ -119,9 +112,7 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
-                if self.config.blurBackground {
-                    //  self.blurView?.blurRadius = 10
-                }
+                self.blurView?.blurRadius = 10
             }, completion: completion)
         case .immediate:
             self.backView?.alpha = 0.5
@@ -129,10 +120,10 @@ public class EasyPopup {
                                           y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
                                           width: self.popupView.frame.width,
                                           height: self.popupView.frame.height)
-            if self.config.blurBackground {
-                //  self.blurView?.blurRadius = 10
-            }
+            self.blurView?.blurRadius = 10
         }
+        popupView.layer.cornerRadius = config.cornerRadius
+        
         
         //        popup.addShadowForRoundedButton(withCorner: 10)
         //        popup.layer.cornerRadius = 5
@@ -156,8 +147,10 @@ public class EasyPopup {
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
                 self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
+                self.blurView?.removeFromSuperview()
                 self.popupView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
@@ -168,8 +161,10 @@ public class EasyPopup {
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
                 self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
+                self.blurView?.removeFromSuperview()
                 self.popupView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
@@ -177,9 +172,11 @@ public class EasyPopup {
             UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
                 self.popupView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
                 self.popupView.transform = CGAffineTransform.identity
+                self.blurView?.removeFromSuperview()
                 self.popupView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
@@ -190,8 +187,10 @@ public class EasyPopup {
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
                 self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
+                self.blurView?.removeFromSuperview()
                 self.popupView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
@@ -202,18 +201,22 @@ public class EasyPopup {
                                               width: self.popupView.frame.width,
                                               height: self.popupView.frame.height)
                 self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
+                self.blurView?.removeFromSuperview()
                 self.popupView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
         case .immediate :
             self.backView?.alpha = 0
+            self.blurView?.blurRadius = 0
+            self.blurView?.removeFromSuperview()
             self.popupView.removeFromSuperview()
             self.backView.removeFromSuperview()
         }
     }
- 
+    
     // adding dimView to superView
     private func addDimView(){
         backView = UIView(frame: superView.bounds)
@@ -231,16 +234,8 @@ public class EasyPopup {
         }
         backView.addTapGestureRecognizer(action: RemovepopupFromBlackView)
     }
-    // function for removing popup on tapping of superview
+    /// function for removing popup on tapping of superview
     @objc private func RemovepopupFromBlackView(){
-        self.popupView.alpha = 0
-        UIView.animate(withDuration: config.animaionDuration, animations: {
-            self.backView.alpha = 0
-        }, completion: { (isfinished) in
-            self.popupView.removeFromSuperview()
-            self.backView.removeFromSuperview()
-            self.popupView.alpha = 1
-        })
+        RemovePopUp(completion: nil)
     }
-    
 }

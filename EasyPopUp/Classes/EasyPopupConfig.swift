@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Config for popup
 public struct EasyPopupConfig {
     public var shadowColor : CGColor
     public var shadowRadius: CGFloat
