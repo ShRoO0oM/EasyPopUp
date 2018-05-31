@@ -16,7 +16,8 @@ class PopUpVC: UIViewController {
     
 
     @IBAction func showPopUpDownToUp(_ sender: Any) {
-        
+     
+      //  let popUp = EasyPopup(superView: self.view, viewTopop: viewToPop, config: <#T##EasyPopupConfig#>)
     }
     @IBAction func showPopUpUpToDown(_ sender: Any) {
         
