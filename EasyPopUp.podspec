@@ -40,7 +40,7 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   
    s.frameworks = 'UIKit'
-   s.dependency 'DynamicBlurView'
+   s.dependency 'DynamicBlurView', '~> 2.0'
    
    
    

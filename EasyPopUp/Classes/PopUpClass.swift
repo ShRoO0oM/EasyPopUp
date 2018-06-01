@@ -13,11 +13,27 @@ public class EasyPopup {
     
     
     
-    
+    // MARK: - Views
     
     private var backView : UIView!
     private var superView : UIView
     private var popupView : UIView
+    
+    
+    
+    /// The shadow container is parent view of popup
+    /// As it does not clip subviews, a shadow can be applied to it
+    
+    private lazy var shadowView: UIView = {
+        let shadowView = UIView(frame: popupView.bounds)
+        shadowView.backgroundColor = UIColor.clear
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowRadius = 5
+        shadowView.layer.shadowOpacity = 0.4
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        shadowView.layer.cornerRadius = 4
+        return shadowView
+    }()
     
     public var config : EasyPopupConfig
     public var blurView : DynamicBlurView?
@@ -50,169 +66,162 @@ public class EasyPopup {
             blurView?.trackingMode = .common
             superView.addSubview(blurView!)
         }
-        superView.addSubview(popupView)
-        superView.bringSubview(toFront: popupView)
+        if !config.shadowEnabled {
+            shadowView.layer.shadowRadius = 0
+        }
+        superView.addSubview(shadowView)
+        shadowView.addSubview(popupView)
+        superView.bringSubview(toFront: shadowView)
+        
         switch config.animationType {
         case .scale:
-            popupView.frame = CenterFrame
-            popupView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-            UIView.animate(withDuration: config.animaionDuration, delay: 0 ,options: config.animtionOptions, animations: {
+            shadowView.frame = CenterFrame
+            shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
-                self.popupView.transform = CGAffineTransform.identity
+                self.shadowView.transform = CGAffineTransform.identity
                 self.blurView?.blurRadius = 10
             }, completion : completion)
         case .upToDown :
             
-            popupView.frame = CGRect(x: (superView.frame.width)/2 - popupView.frame.width/2, y: -(popupView.frame.height), width: popupView.frame.width, height: popupView.frame.height)
+            shadowView.frame = CGRect(x: (superView.frame.width)/2 - shadowView.frame.width/2, y: -(shadowView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
             
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.blurView?.blurRadius = 10
             }, completion: completion)
             
-            break
         case .downToUp:
-            popupView.frame = CGRect(x: (superView.frame.width)/2 - popupView.frame.width/2, y: (superView.frame.height), width: popupView.frame.width, height: popupView.frame.height)
+            shadowView.frame = CGRect(x: (superView.frame.width)/2 - shadowView.frame.width/2, y: (superView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
             
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.blurView?.blurRadius = 10
             }, completion: completion)
         case .leftToright:
-            popupView.frame = CGRect(x: -popupView.frame.width
-                , y: (self.superView.frame.height)/2 - self.popupView.frame.height/2
-                , width: popupView.frame.width
-                , height: popupView.frame.height)
+            shadowView.frame = CGRect(x: -shadowView.frame.width
+                , y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2
+                , width: shadowView.frame.width
+                , height: shadowView.frame.height)
             
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.blurView?.blurRadius = 10
             }, completion: completion)
         case .rightToleft:
-            popupView.frame = CGRect(x: superView.frame.width
-                , y: (self.superView.frame.height)/2 - self.popupView.frame.height/2
-                , width: popupView.frame.width
-                , height: popupView.frame.height)
+            shadowView.frame = CGRect(x: superView.frame.width
+                , y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2
+                , width: shadowView.frame.width
+                , height: shadowView.frame.height)
             
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
+                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.blurView?.blurRadius = 10
             }, completion: completion)
         case .immediate:
             self.backView?.alpha = 0.5
-            self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                          y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                          width: self.popupView.frame.width,
-                                          height: self.popupView.frame.height)
+            self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
+                                          y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                          width: self.shadowView.frame.width,
+                                          height: self.shadowView.frame.height)
             self.blurView?.blurRadius = 10
         }
         popupView.layer.cornerRadius = config.cornerRadius
-        
-        
-        //        popup.addShadowForRoundedButton(withCorner: 10)
-        //        popup.layer.cornerRadius = 5
-        //        popup.layer.borderColor = UIColor.clear.cgColor
-        //        popup.layer.borderWidth = 0.5
-        //        popup.layer.shadowOffset = CGSize(width: 5, height: 5)
-        //        popup.layer.shadowOpacity = 10
-        //        popup.layer.shadowRadius = 5
-        //        popup.layer.shadowColor = UIColor.darkGray.cgColor
-        
-        
+
     }
     public func RemovePopUp(completion : ((Bool)->Void)? ){
         
         switch config.animationType {
             
         case .upToDown :
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
-                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
                                               y: self.superView.frame.height,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
-                self.popupView.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
         case .downToUp:
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
-                self.popupView.frame = CGRect(x: (self.superView.frame.width)/2 - self.popupView.frame.width/2,
-                                              y: -self.popupView.frame.height,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
+                                              y: -self.shadowView.frame.height,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
-                self.popupView.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
         case .scale:
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
-                self.popupView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.shadowView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
-                self.popupView.transform = CGAffineTransform.identity
+                self.shadowView.transform = CGAffineTransform.identity
                 self.blurView?.removeFromSuperview()
-                self.popupView.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
         case .leftToright :
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
-                self.popupView.frame = CGRect(x: self.superView.frame.width,
-                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: self.superView.frame.width,
+                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
-                self.popupView.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
         case .rightToleft:
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions, animations: {
-                self.popupView.frame = CGRect(x: -self.popupView.frame.width,
-                                              y: (self.superView.frame.height)/2 - self.popupView.frame.height/2,
-                                              width: self.popupView.frame.width,
-                                              height: self.popupView.frame.height)
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: -self.shadowView.frame.width,
+                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
+                                              width: self.shadowView.frame.width,
+                                              height: self.shadowView.frame.height)
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
-                self.popupView.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
                 self.backView.removeFromSuperview()
             }
         case .immediate :
             self.backView?.alpha = 0
             self.blurView?.blurRadius = 0
             self.blurView?.removeFromSuperview()
-            self.popupView.removeFromSuperview()
+            self.shadowView.removeFromSuperview()
             self.backView.removeFromSuperview()
         }
     }
