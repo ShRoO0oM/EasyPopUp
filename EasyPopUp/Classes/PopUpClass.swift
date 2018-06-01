@@ -63,7 +63,7 @@ public class EasyPopup {
         if config.blurBackground {
             blurView = DynamicBlurView(frame: superView.bounds)
             blurView?.blurRadius = 0
-            blurView?.trackingMode = .common
+            blurView?.trackingMode = config.blurTrackingMode
             superView.addSubview(blurView!)
         }
         if !config.shadowEnabled {
@@ -73,15 +73,20 @@ public class EasyPopup {
         shadowView.addSubview(popupView)
         superView.bringSubview(toFront: shadowView)
         
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         switch config.animationType {
         case .scale:
             shadowView.frame = CenterFrame
             shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0 ,options: config.animtionOptions, animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.6 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
                 self.shadowView.transform = CGAffineTransform.identity
-                self.blurView?.blurRadius = 10
-            }, completion : completion)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                completion?(finished)
+                UIApplication.shared.endIgnoringInteractionEvents()
+            })
         case .upToDown :
             
             shadowView.frame = CGRect(x: (superView.frame.width)/2 - shadowView.frame.width/2, y: -(shadowView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
@@ -92,8 +97,11 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                               width: self.shadowView.frame.width,
                                               height: self.shadowView.frame.height)
-                self.blurView?.blurRadius = 10
-            }, completion: completion)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                completion?(finished)
+                UIApplication.shared.endIgnoringInteractionEvents()
+            })
             
         case .downToUp:
             shadowView.frame = CGRect(x: (superView.frame.width)/2 - shadowView.frame.width/2, y: (superView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
@@ -104,8 +112,11 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                               width: self.shadowView.frame.width,
                                               height: self.shadowView.frame.height)
-                self.blurView?.blurRadius = 10
-            }, completion: completion)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                completion?(finished)
+                UIApplication.shared.endIgnoringInteractionEvents()
+            })
         case .leftToright:
             shadowView.frame = CGRect(x: -shadowView.frame.width
                 , y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2
@@ -118,8 +129,11 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                               width: self.shadowView.frame.width,
                                               height: self.shadowView.frame.height)
-                self.blurView?.blurRadius = 10
-            }, completion: completion)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                completion?(finished)
+                UIApplication.shared.endIgnoringInteractionEvents()
+            })
         case .rightToleft:
             shadowView.frame = CGRect(x: superView.frame.width
                 , y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2
@@ -132,15 +146,19 @@ public class EasyPopup {
                                               y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                               width: self.shadowView.frame.width,
                                               height: self.shadowView.frame.height)
-                self.blurView?.blurRadius = 10
-            }, completion: completion)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                completion?(finished)
+                UIApplication.shared.endIgnoringInteractionEvents()
+            })
         case .immediate:
             self.backView?.alpha = 0.5
             self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
                                           y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                           width: self.shadowView.frame.width,
                                           height: self.shadowView.frame.height)
-            self.blurView?.blurRadius = 10
+            self.blurView?.blurRadius = self.config.blurRadius
+            UIApplication.shared.endIgnoringInteractionEvents()
         }
         popupView.layer.cornerRadius = config.cornerRadius
 
@@ -150,7 +168,7 @@ public class EasyPopup {
         switch config.animationType {
             
         case .upToDown :
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
                 self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
                                               y: self.superView.frame.height,
                                               width: self.shadowView.frame.width,
@@ -164,7 +182,7 @@ public class EasyPopup {
                 self.backView.removeFromSuperview()
             }
         case .downToUp:
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
                 self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
                                               y: -self.shadowView.frame.height,
                                               width: self.shadowView.frame.width,
@@ -190,7 +208,7 @@ public class EasyPopup {
                 self.backView.removeFromSuperview()
             }
         case .leftToright :
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
                 self.shadowView.frame = CGRect(x: self.superView.frame.width,
                                               y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                               width: self.shadowView.frame.width,
@@ -204,7 +222,7 @@ public class EasyPopup {
                 self.backView.removeFromSuperview()
             }
         case .rightToleft:
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0 , options: config.animtionOptions , animations: {
                 self.shadowView.frame = CGRect(x: -self.shadowView.frame.width,
                                               y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
                                               width: self.shadowView.frame.width,
