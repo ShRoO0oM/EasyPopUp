@@ -52,10 +52,13 @@ public class EasyPopup {
                                   y: (superView.frame.height)/2 - (popupView.frame.height)/2,
                                   width: popupView.frame.width,
                                   height: popupView.frame.height)
-        // preapring view with config file
         
+        // preapring view with config
         if config.dimBackground {
             self.addDimView()
+        }
+        else {
+            backView = nil
         }
         if config.autoDismiss {
             self.addTapGesture()
@@ -66,9 +69,9 @@ public class EasyPopup {
             blurView?.trackingMode = config.blurTrackingMode
             superView.addSubview(blurView!)
         }
-        if !config.shadowEnabled {
-            shadowView.layer.shadowRadius = 0
-        }
+        
+        shadowView.layer.shadowRadius = config.shadowEnabled ? 5 : 0
+        
         superView.addSubview(shadowView)
         shadowView.addSubview(popupView)
         superView.bringSubview(toFront: shadowView)
@@ -79,7 +82,7 @@ public class EasyPopup {
         case .scale:
             shadowView.frame = CenterFrame
             shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.6 ,options: config.animtionOptions, animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.6 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
                 self.shadowView.transform = CGAffineTransform.identity
                 self.blurView?.blurRadius = self.config.blurRadius
@@ -179,7 +182,7 @@ public class EasyPopup {
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
-                self.backView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
             }
         case .downToUp:
             UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
@@ -193,10 +196,10 @@ public class EasyPopup {
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
-                self.backView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
             }
         case .scale:
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
                 self.shadowView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
@@ -205,7 +208,7 @@ public class EasyPopup {
                 self.shadowView.transform = CGAffineTransform.identity
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
-                self.backView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
             }
         case .leftToright :
             UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
@@ -219,7 +222,7 @@ public class EasyPopup {
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
-                self.backView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
             }
         case .rightToleft:
             UIView.animate(withDuration: config.animaionDuration, delay: 0 , options: config.animtionOptions , animations: {
@@ -233,14 +236,14 @@ public class EasyPopup {
                 completion?(finished)
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
-                self.backView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
             }
         case .immediate :
             self.backView?.alpha = 0
             self.blurView?.blurRadius = 0
             self.blurView?.removeFromSuperview()
             self.shadowView.removeFromSuperview()
-            self.backView.removeFromSuperview()
+            self.backView?.removeFromSuperview()
         }
     }
     
