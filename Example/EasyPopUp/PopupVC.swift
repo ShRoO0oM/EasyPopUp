@@ -34,6 +34,14 @@ class PopupVC: UIViewController,UITextFieldDelegate {
         let easePopUp = EasyPopup(superView: self.view, viewTopop: viewToPop)
         return easePopUp
     }()
+    
+    lazy var viewControllerPopup : EasyViewControllerPopup = {
+        let popupVC = self.storyboard?.instantiateViewController(withIdentifier: "vcpopup") as! ViewControllerExample
+        let easePopUp = EasyViewControllerPopup(sourceViewController: self, destinationViewController: popupVC)
+        return easePopUp
+    }()
+    
+    
     override func viewDidLoad() {
         self.animationTypePickerView.delegate?.pickerView!(animationTypePickerView, didSelectRow: 0, inComponent: 0)
         
@@ -76,9 +84,10 @@ class PopupVC: UIViewController,UITextFieldDelegate {
         popUpView.Showpopup { (isfinished) in
             print(isfinished)
         }
-        
     }
-    
+    @IBAction func showViewControllerPopup(_ sender: Any) {
+       viewControllerPopup.showVCAsPopup()
+    }
     @IBAction func removePopUp(_ sender: Any) {
         
         popUpView.RemovePopUp { (isfinished) in

@@ -232,7 +232,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5z-fd-0Op">
                                 <rect key="frame" x="93.5" y="505" width="187.5" height="30"/>
                                 <color key="backgroundColor" red="0.5450980392" green="0.76470588240000004" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Show Popup">
+                                <state key="normal" title="Show View Popup">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -253,9 +253,25 @@
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nO-oq-pws">
+                                <rect key="frame" x="37" y="555" width="300" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5328595075" blue="0.39709020430000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Show ViewController Popup">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showViewControllerPopup:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CgB-gp-b7u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="6nO-oq-pws" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="1S4-wA-DYs"/>
                             <constraint firstItem="mmt-gs-lOH" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.2" id="63j-Ac-a3h"/>
                             <constraint firstItem="bcK-eS-oBC" firstAttribute="top" secondItem="Brw-zP-jOZ" secondAttribute="bottom" constant="8" id="8P1-id-scf"/>
                             <constraint firstItem="Brw-zP-jOZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="AQn-RG-MVD"/>
@@ -263,11 +279,13 @@
                             <constraint firstItem="bcK-eS-oBC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="FsJ-K4-Coj"/>
                             <constraint firstItem="vZh-vj-Q7I" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Heg-iM-cVk"/>
                             <constraint firstItem="g9N-tP-4vq" firstAttribute="top" secondItem="mmt-gs-lOH" secondAttribute="bottom" constant="16" id="IEt-Ww-3MT"/>
+                            <constraint firstItem="6nO-oq-pws" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.8" id="JA4-hi-J2X"/>
                             <constraint firstItem="mmt-gs-lOH" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="JFy-qs-i9x"/>
                             <constraint firstItem="g9N-tP-4vq" firstAttribute="leading" secondItem="Brw-zP-jOZ" secondAttribute="trailing" constant="10" id="LDN-FV-Sw8"/>
                             <constraint firstItem="Brw-zP-jOZ" firstAttribute="top" secondItem="mmt-gs-lOH" secondAttribute="bottom" id="cnS-g8-y5y"/>
                             <constraint firstItem="F5z-fd-0Op" firstAttribute="top" secondItem="bcK-eS-oBC" secondAttribute="bottom" constant="16" id="eDT-KS-lM5"/>
                             <constraint firstItem="F5z-fd-0Op" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="gUG-4a-uhM"/>
+                            <constraint firstItem="6nO-oq-pws" firstAttribute="top" secondItem="F5z-fd-0Op" secondAttribute="bottom" constant="20" id="p5t-BX-hGe"/>
                             <constraint firstItem="mmt-gs-lOH" firstAttribute="top" secondItem="vZh-vj-Q7I" secondAttribute="bottom" constant="10" id="qKx-IH-6XI"/>
                             <constraint firstItem="F5z-fd-0Op" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.5" id="sTQ-ZG-Rqb"/>
                             <constraint firstItem="vZh-vj-Q7I" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="sh1-8J-0dc"/>
@@ -318,7 +336,72 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="29.600000000000001" y="141.67916041979012"/>
+            <point key="canvasLocation" x="-76" y="142"/>
+        </scene>
+        <!--View Controller Example-->
+        <scene sceneID="8Gm-V8-Fgf">
+            <objects>
+                <viewController storyboardIdentifier="vcpopup" id="HAQ-wJ-FWy" customClass="ViewControllerExample" customModule="EasyPopUp_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LyI-ZN-0qp"/>
+                        <viewControllerLayoutGuide type="bottom" id="EQ7-Un-heT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GMW-An-2Wt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoj-j8-A9Y">
+                                <rect key="frame" x="112.5" y="535.5" width="150" height="40"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="V16-hc-Lx5"/>
+                                    <constraint firstAttribute="width" constant="150" id="wgb-6X-pnG"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dismissVC:" destination="HAQ-wJ-FWy" eventType="touchUpInside" id="QRb-Ni-77Z"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-ng-ceY">
+                                <rect key="frame" x="37.5" y="120" width="300" height="400.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a56-gk-42n">
+                                <rect key="frame" x="37" y="120" width="300.5" height="400.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="JtN-ng-ceY" firstAttribute="centerX" secondItem="GMW-An-2Wt" secondAttribute="centerX" id="8de-0x-L9k"/>
+                            <constraint firstItem="JtN-ng-ceY" firstAttribute="height" secondItem="GMW-An-2Wt" secondAttribute="height" multiplier="0.6" id="Cpt-3a-vZl"/>
+                            <constraint firstItem="a56-gk-42n" firstAttribute="leading" secondItem="JtN-ng-ceY" secondAttribute="leading" id="HYB-XI-slu"/>
+                            <constraint firstItem="JtN-ng-ceY" firstAttribute="width" secondItem="GMW-An-2Wt" secondAttribute="width" multiplier="0.8" id="LZ9-IK-WGf"/>
+                            <constraint firstItem="a56-gk-42n" firstAttribute="bottom" secondItem="JtN-ng-ceY" secondAttribute="bottom" id="LcA-Rl-cjd"/>
+                            <constraint firstItem="aoj-j8-A9Y" firstAttribute="top" secondItem="JtN-ng-ceY" secondAttribute="bottom" constant="15" id="N5L-5M-AAy"/>
+                            <constraint firstItem="aoj-j8-A9Y" firstAttribute="centerX" secondItem="GMW-An-2Wt" secondAttribute="centerX" id="aT1-oY-F7h"/>
+                            <constraint firstItem="a56-gk-42n" firstAttribute="trailing" secondItem="JtN-ng-ceY" secondAttribute="trailing" id="fd8-RP-QuX"/>
+                            <constraint firstItem="JtN-ng-ceY" firstAttribute="top" secondItem="LyI-ZN-0qp" secondAttribute="bottom" constant="100" id="rhQ-Hn-r1l"/>
+                            <constraint firstItem="a56-gk-42n" firstAttribute="top" secondItem="JtN-ng-ceY" secondAttribute="top" id="uFL-Fd-zji"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="aoj-j8-A9Y" id="a5Y-1c-qvU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddp-J4-dG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="141.67916041979012"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="1920" height="1200"/>
+    </resources>
 </document>

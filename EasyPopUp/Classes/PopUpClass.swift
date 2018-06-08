@@ -16,8 +16,8 @@ public class EasyPopup {
     // MARK: - Views
     
     private var backView : UIView!
-    private var superView : UIView
-    private var popupView : UIView
+    public var superView : UIView
+    public var popupView : UIView
     
     
     
