@@ -105,7 +105,7 @@ public class EasyViewControllerPopup: NSObject {
             })
         case .upToDown :
             
-            shadowView.frame = CGRect(x: (sourceVC.view.frame.width)/2 - shadowView.frame.width/2, y: -(shadowView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
+            shadowView.frame = CGRect(x: (contextView.frame.width)/2 - shadowView.frame.width/2, y: -(shadowView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
@@ -119,7 +119,7 @@ public class EasyViewControllerPopup: NSObject {
             })
     
         case .downToUp:
-            shadowView.frame = CGRect(x: (sourceVC.view.frame.width)/2 - shadowView.frame.width/2, y: (sourceVC.view.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
+            shadowView.frame = CGRect(x: (contextView.frame.width)/2 - shadowView.frame.width/2, y: (contextView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
@@ -133,7 +133,7 @@ public class EasyViewControllerPopup: NSObject {
             })
         case .leftToright:
             shadowView.frame = CGRect(x: -shadowView.frame.width
-                , y: (sourceVC.view.frame.height)/2 - self.shadowView.frame.height/2
+                , y: (contextView.frame.height)/2 - self.shadowView.frame.height/2
                 , width: shadowView.frame.width
                 , height: shadowView.frame.height)
             
@@ -148,8 +148,8 @@ public class EasyViewControllerPopup: NSObject {
                 transitionContext.completeTransition(finished)
             })
         case .rightToleft:
-            shadowView.frame = CGRect(x: sourceVC.view.frame.width
-                , y: (sourceVC.view.frame.height)/2 - self.shadowView.frame.height/2
+            shadowView.frame = CGRect(x: contextView.frame.width
+                , y: (contextView.frame.height)/2 - self.shadowView.frame.height/2
                 , width: shadowView.frame.width
                 , height: shadowView.frame.height)
             
@@ -176,8 +176,86 @@ public class EasyViewControllerPopup: NSObject {
         popupView.clipsToBounds = true
     }
     private func animateDismiss(transitionContext: UIViewControllerContextTransitioning) {
-        blurView?.removeFromSuperview()
-        transitionContext.completeTransition(true)
+        
+        let contextView = transitionContext.containerView
+        
+        switch config.animationType {
+        case .upToDown :
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                               y: contextView.frame.height,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
+            }) { (finished) in
+                transitionContext.completeTransition(finished)
+                self.blurView?.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
+            }
+        case .downToUp:
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                               y: -self.shadowView.frame.height,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
+            }) { (finished) in
+                transitionContext.completeTransition(finished)
+                self.blurView?.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
+            }
+        case .scale:
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.shadowView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
+            }) { (finished) in
+                transitionContext.completeTransition(finished)
+                self.shadowView.transform = CGAffineTransform.identity
+                self.blurView?.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
+            }
+        case .leftToright :
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: contextView.frame.width,
+                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
+            }) { (finished) in
+                transitionContext.completeTransition(finished)
+                self.blurView?.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
+            }
+        case .rightToleft:
+            UIView.animate(withDuration: config.animaionDuration, delay: 0 , options: config.animtionOptions , animations: {
+                self.shadowView.frame = CGRect(x: -self.shadowView.frame.width,
+                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.backView?.alpha = 0
+                self.blurView?.blurRadius = 0
+            }) { (finished) in
+                transitionContext.completeTransition(finished)
+                self.blurView?.removeFromSuperview()
+                self.shadowView.removeFromSuperview()
+                self.backView?.removeFromSuperview()
+            }
+        case .immediate :
+            self.backView?.alpha = 0
+            self.blurView?.blurRadius = 0
+            self.blurView?.removeFromSuperview()
+            self.shadowView.removeFromSuperview()
+            self.backView?.removeFromSuperview()
+            transitionContext.completeTransition(true)
+        }
     }
     
     // adding dimView to superView
