@@ -37,7 +37,7 @@ class PopupVC: UIViewController,UITextFieldDelegate {
     
     lazy var viewControllerPopup : EasyViewControllerPopup = {
         let popupVC = self.storyboard?.instantiateViewController(withIdentifier: "vcpopup") as! ViewControllerExample
-        let easePopUp = EasyViewControllerPopup(sourceViewController: self, destinationViewController: popupVC)
+        let easePopUp = EasyViewControllerPopup(sourceViewController: self, destinationViewController: popupVC )
         return easePopUp
     }()
     
@@ -51,7 +51,18 @@ class PopupVC: UIViewController,UITextFieldDelegate {
         
     }
     @IBAction func showPopup(_ sender: Any) {
-        
+        setupConfig()
+        popUpView.config = popUpConfig
+        popUpView.Showpopup { (isfinished) in
+            print(isfinished)
+        }
+    }
+    @IBAction func showViewControllerPopup(_ sender: Any) {
+        setupConfig()
+        viewControllerPopup.config = popUpConfig
+        viewControllerPopup.showVCAsPopup()
+    }
+    private func setupConfig(){
         let dimBackground = dimBackgroundSwitch.isOn
         popUpConfig.dimBackground = dimBackground
         
@@ -78,15 +89,6 @@ class PopupVC: UIViewController,UITextFieldDelegate {
         default:
             break
         }
-        
-        popUpView.config = popUpConfig
-        
-        popUpView.Showpopup { (isfinished) in
-            print(isfinished)
-        }
-    }
-    @IBAction func showViewControllerPopup(_ sender: Any) {
-       viewControllerPopup.showVCAsPopup()
     }
     @IBAction func removePopUp(_ sender: Any) {
         

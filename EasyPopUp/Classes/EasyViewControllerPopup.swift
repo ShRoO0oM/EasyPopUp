@@ -9,19 +9,21 @@
 import UIKit
 import DynamicBlurView
 
+
 public class EasyViewControllerPopup: NSObject {
     
     
     // MARK: - Views
     
     private var backView : UIView!
+    public var popupView : UIView!
     public var config : EasyPopupConfig
     public var blurView : DynamicBlurView?
     
     public var sourceVC : UIViewController
     public var destinationVC : UIViewController
     
-    private var visualEffectBlurView = UIVisualEffectView()
+    private var isPresenting = false
     
     
     /// The shadow container is parent view of popup
@@ -45,69 +47,193 @@ public class EasyViewControllerPopup: NSObject {
         
     }
     public func showVCAsPopup(){
+        if destinationVC as? EasyPopUpViewControllerDatasource == nil {
+            fatalError("ERROR: \(destinationVC) does not conform to protocol 'EasyPopUpViewControllerDatasource'")
+        }
         self.sourceVC.transitioningDelegate = self
         self.destinationVC.transitioningDelegate = self
         destinationVC.modalPresentationStyle = .overCurrentContext
         sourceVC.present(destinationVC, animated: true, completion: nil)
     }
-}
-extension EasyViewControllerPopup : UIViewControllerTransitioningDelegate {
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
+    private func animatePresent(transitionContext: UIViewControllerContextTransitioning) {
+        guard let presentedViewController = transitionContext.viewController(forKey: .to)
+            else {return}
+        guard let destinationVCDatasource = presentedViewController as? EasyPopUpViewControllerDatasource else {return}
+        
+        self.popupView = destinationVCDatasource.popupView
+        
+        let contextView = transitionContext.containerView
+        
+        let CenterFrame =  CGRect(x: (contextView.frame.width)/2 - (popupView.frame.width)/2,
+                                  y: (contextView.frame.height)/2 - (popupView.frame.height)/2,
+                                  width: popupView.frame.width,
+                                  height: popupView.frame.height)
+        shadowView.frame = CenterFrame
+        // preapring view with config
+        if config.dimBackground {
+            self.addDimView(to: contextView)
+        }
+        else {
+            backView = nil
+        }
+        if config.autoDismiss {
+            self.addTapGesture(to: contextView)
+        }
+        if config.blurBackground {
+            blurView = DynamicBlurView(frame: sourceVC.view.bounds)
+            blurView?.blurRadius = 0
+            blurView?.trackingMode = config.blurTrackingMode
+            sourceVC.view.addSubview(blurView!)
+        }
+        shadowView.layer.shadowRadius = config.shadowEnabled ? 5 : 0
+        
+        contextView.addSubview(shadowView)
+        shadowView.addSubview(popupView)
+        popupView.fillToSuperview()
+ 
+        
+        switch config.animationType {
+        case .scale:
+            shadowView.frame = CenterFrame
+            shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.6 ,options: config.animtionOptions, animations: {
+                self.backView.alpha = 0.5
+                self.shadowView.transform = CGAffineTransform.identity
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                transitionContext.completeTransition(finished)
+            })
+        case .upToDown :
+            
+            shadowView.frame = CGRect(x: (sourceVC.view.frame.width)/2 - shadowView.frame.width/2, y: -(shadowView.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                transitionContext.completeTransition(finished)
+            })
+    
+        case .downToUp:
+            shadowView.frame = CGRect(x: (sourceVC.view.frame.width)/2 - shadowView.frame.width/2, y: (sourceVC.view.frame.height), width: shadowView.frame.width, height: shadowView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                transitionContext.completeTransition(finished)
+            })
+        case .leftToright:
+            shadowView.frame = CGRect(x: -shadowView.frame.width
+                , y: (sourceVC.view.frame.height)/2 - self.shadowView.frame.height/2
+                , width: shadowView.frame.width
+                , height: shadowView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                transitionContext.completeTransition(finished)
+            })
+        case .rightToleft:
+            shadowView.frame = CGRect(x: sourceVC.view.frame.width
+                , y: (sourceVC.view.frame.height)/2 - self.shadowView.frame.height/2
+                , width: shadowView.frame.width
+                , height: shadowView.frame.height)
+            
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
+                self.backView?.alpha = 0.5
+                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                               width: self.shadowView.frame.width,
+                                               height: self.shadowView.frame.height)
+                self.blurView?.blurRadius = self.config.blurRadius
+            }, completion : { finished in
+                transitionContext.completeTransition(finished)
+            })
+        case .immediate:
+            self.backView?.alpha = 0.5
+            self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
+                                           y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
+                                           width: self.shadowView.frame.width,
+                                           height: self.shadowView.frame.height)
+            self.blurView?.blurRadius = self.config.blurRadius
+            transitionContext.completeTransition(true)
+        }
+        popupView.layer.cornerRadius = config.cornerRadius
+        popupView.clipsToBounds = true
+    }
+    private func animateDismiss(transitionContext: UIViewControllerContextTransitioning) {
+        blurView?.removeFromSuperview()
+        transitionContext.completeTransition(true)
+    }
+    
+    // adding dimView to superView
+    private func addDimView(to view:UIView){
+        backView = UIView(frame: view.bounds)
+        view.addSubview(backView)
+        backView.backgroundColor = UIColor.darkGray
+        backView.alpha = 0
+        backView.isOpaque = true
+    }
+    // adding tapGesture to dismiss popupView
+    private func addTapGesture(to view:UIView){
+        if backView == nil {
+            backView = UIView(frame: view.bounds)
+            view.addSubview(backView)
+            backView.backgroundColor = .clear
+        }
+        backView.addTapGestureRecognizer(action: RemovepopupFromBlackView)
+    }
+    /// function for removing popup on tapping of superview
+    @objc private func RemovepopupFromBlackView(){
+        destinationVC.dismiss(animated: true, completion: nil)
     }
 }
 extension EasyViewControllerPopup : UIViewControllerAnimatedTransitioning {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        if isPresenting {
+            self.animatePresent(transitionContext: transitionContext)
+        }
+        else {
+            self.animateDismiss(transitionContext: transitionContext)
+        }
+    }
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return config.animaionDuration
     }
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromVC = transitionContext.viewController(forKey: .from),
-            let presentedViewController = transitionContext.viewController(forKey: .to)
-            else {return}
-        presentedViewController.view.alpha = 0
-        presentedViewController.view.frame = transitionContext.containerView.bounds
-        
-        transitionContext.containerView.addSubview(presentedViewController.view)
-        
-        visualEffectBlurView.frame = transitionContext.containerView.bounds
-        visualEffectBlurView.alpha = 1
-        
-        transitionContext.containerView.insertSubview(visualEffectBlurView, at: 0)
-        visualEffectBlurView.translatesAutoresizingMaskIntoConstraints = false
-        
-        transitionContext.containerView.addConstraints([
-            NSLayoutConstraint(item: visualEffectBlurView, attribute: .bottom, relatedBy: .equal,
-                               toItem: transitionContext.containerView, attribute: .bottom, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: visualEffectBlurView, attribute: .top, relatedBy: .equal,
-                               toItem: transitionContext.containerView, attribute: .top, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: visualEffectBlurView, attribute: .leading, relatedBy: .equal,
-                               toItem: transitionContext.containerView, attribute: .leading, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: visualEffectBlurView, attribute: .trailing, relatedBy: .equal,
-                               toItem: transitionContext.containerView, attribute: .trailing, multiplier: 1, constant: 0)
-            ])
-        
-        presentedViewController.view.alpha = 0
-        
-        // blur view animation workaround: need that to avoid the "blur-flashes"
-        UIView.animate(withDuration: transitionDuration(using: transitionContext) * 0.75) {
-            self.visualEffectBlurView.effect = UIBlurEffect(style: .light)
+}
+extension EasyViewControllerPopup : UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.isPresenting = true
+        return self
+    }
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.isPresenting = false
+        return self
+    }
+}
+extension UIView {
+    public func fillToSuperview() {
+        // https://videos.letsbuildthatapp.com/
+        translatesAutoresizingMaskIntoConstraints = false
+        if let superview = superview {
+            leftAnchor.constraint(equalTo: superview.leftAnchor).isActive = true
+            rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
+            topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
         }
-        
-        UIView.animate(
-            withDuration: transitionDuration(using: transitionContext),
-            delay: 0.0,
-            usingSpringWithDamping: 1.0,
-            initialSpringVelocity: 0.0,
-            options: .allowUserInteraction,
-            animations: {
-                presentedViewController.view.alpha = 1
-                presentedViewController.view.alpha = 1
-                presentedViewController.view.transform = CGAffineTransform(scaleX: 1, y: 1)
-        },
-            completion: { isCompleted in
-                transitionContext.completeTransition(isCompleted)
-        }
-        )
-        
     }
 }

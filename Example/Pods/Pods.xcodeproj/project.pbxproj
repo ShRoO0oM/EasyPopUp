@@ -10,6 +10,7 @@
 		0F979D0A878062EA1DFD82B4ACE22C01 /* DynamicBlurView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */; };
 		10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAA1341F51CBCE036B7DE8DE5A4D4BD /* PopUpClass.swift */; };
 		15D4C88920CAF93000EB37BA /* EasyViewControllerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D4C88720CAECCA00EB37BA /* EasyViewControllerPopup.swift */; };
+		15D4C88B20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D4C88A20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift */; };
 		15DD8D1F20C56E9A00CAA09D /* AnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD8D1E20C56E9A00CAA09D /* AnimationTypes.swift */; };
 		18E6B3D32EC058E94723B7176F6625E2 /* Pods-EasyPopUp_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14305AAC45D5657BECA1A0D1CD63F32A /* Pods-EasyPopUp_Tests-dummy.m */; };
 		1BD95819A67825305691F9D03A1477E3 /* DynamicBlurView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9F4753FE62FAD7697058971F39E531 /* DynamicBlurView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,6 +88,7 @@
 		14305AAC45D5657BECA1A0D1CD63F32A /* Pods-EasyPopUp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPopUp_Tests-dummy.m"; sourceTree = "<group>"; };
 		153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicBlurView-dummy.m"; sourceTree = "<group>"; };
 		15D4C88720CAECCA00EB37BA /* EasyViewControllerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EasyViewControllerPopup.swift; path = EasyPopUp/Classes/EasyViewControllerPopup.swift; sourceTree = "<group>"; };
+		15D4C88A20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EasyPopUpViewControllerDatasource.swift; path = EasyPopUp/Classes/EasyPopUpViewControllerDatasource.swift; sourceTree = "<group>"; };
 		15DD8D1E20C56E9A00CAA09D /* AnimationTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationTypes.swift; path = EasyPopUp/Classes/AnimationTypes.swift; sourceTree = "<group>"; };
 		1E14CD0BAE17E13F186D040DBA9FE096 /* Pods-EasyPopUp_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPopUp_Example-frameworks.sh"; sourceTree = "<group>"; };
 		26131D7B0A66457F04A7486E593E2ABD /* EasyPopUp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyPopUp-dummy.m"; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				83CF3F6320BFDDC70054AE8D /* Extentions.swift */,
 				83CF3F6820BFE94D0054AE8D /* EasyPopupConfig.swift */,
 				15D4C88720CAECCA00EB37BA /* EasyViewControllerPopup.swift */,
+				15D4C88A20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift */,
 				2A87C6BD2985946A84B2859D43BEF9B8 /* Pod */,
 				14797BE6F8AA208DF9E040750205D343 /* Support Files */,
 			);
@@ -530,6 +533,7 @@
 				15D4C88920CAF93000EB37BA /* EasyViewControllerPopup.swift in Sources */,
 				C96C98BEACE77C1100DDC8524DCBE4FE /* EasyPopUp-dummy.m in Sources */,
 				10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */,
+				15D4C88B20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift in Sources */,
 				83CF3F6920BFE94D0054AE8D /* EasyPopupConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,7 +846,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/EasyPopUp/EasyPopUp-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/EasyPopUp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EasyPopUp/EasyPopUp.modulemap";
 				PRODUCT_MODULE_NAME = EasyPopUp;
@@ -874,7 +878,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/EasyPopUp/EasyPopUp-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/EasyPopUp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EasyPopUp/EasyPopUp.modulemap";
 				PRODUCT_MODULE_NAME = EasyPopUp;

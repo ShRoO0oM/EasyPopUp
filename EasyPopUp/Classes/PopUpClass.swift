@@ -164,7 +164,7 @@ public class EasyPopup {
             UIApplication.shared.endIgnoringInteractionEvents()
         }
         popupView.layer.cornerRadius = config.cornerRadius
-
+        popupView.clipsToBounds = true
     }
     public func RemovePopUp(completion : ((Bool)->Void)? ){
         

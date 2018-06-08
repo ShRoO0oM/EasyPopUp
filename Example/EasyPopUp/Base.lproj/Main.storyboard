@@ -350,50 +350,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoj-j8-A9Y">
-                                <rect key="frame" x="112.5" y="535.5" width="150" height="40"/>
-                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUK-6E-hE1">
+                                <rect key="frame" x="56.5" y="120" width="262.5" height="447"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-ng-ceY">
+                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="402.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a56-gk-42n">
+                                        <rect key="frame" x="4" y="0.0" width="254.5" height="402.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoj-j8-A9Y">
+                                        <rect key="frame" x="81.5" y="406.5" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="RBU-ii-miA"/>
+                                        </constraints>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dismissVC:" destination="HAQ-wJ-FWy" eventType="touchUpInside" id="QRb-Ni-77Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="V16-hc-Lx5"/>
-                                    <constraint firstAttribute="width" constant="150" id="wgb-6X-pnG"/>
+                                    <constraint firstItem="JtN-ng-ceY" firstAttribute="height" secondItem="cUK-6E-hE1" secondAttribute="height" multiplier="0.9" id="3Hb-Bi-M0C"/>
+                                    <constraint firstItem="aoj-j8-A9Y" firstAttribute="top" secondItem="JtN-ng-ceY" secondAttribute="bottom" constant="4" id="B9M-Zn-cI7"/>
+                                    <constraint firstItem="JtN-ng-ceY" firstAttribute="top" secondItem="cUK-6E-hE1" secondAttribute="top" id="DYB-B8-jNQ"/>
+                                    <constraint firstItem="a56-gk-42n" firstAttribute="trailing" secondItem="JtN-ng-ceY" secondAttribute="trailing" constant="-4" id="Ej8-dg-fSR"/>
+                                    <constraint firstItem="a56-gk-42n" firstAttribute="top" secondItem="JtN-ng-ceY" secondAttribute="top" id="Gyo-cU-GXn"/>
+                                    <constraint firstItem="a56-gk-42n" firstAttribute="bottom" secondItem="JtN-ng-ceY" secondAttribute="bottom" id="HTS-Re-JLe"/>
+                                    <constraint firstAttribute="trailing" secondItem="JtN-ng-ceY" secondAttribute="trailing" id="Q13-UX-UoS"/>
+                                    <constraint firstItem="aoj-j8-A9Y" firstAttribute="centerX" secondItem="cUK-6E-hE1" secondAttribute="centerX" id="Wrm-C5-IxO"/>
+                                    <constraint firstItem="JtN-ng-ceY" firstAttribute="leading" secondItem="cUK-6E-hE1" secondAttribute="leading" id="cp7-rM-WCG"/>
+                                    <constraint firstItem="a56-gk-42n" firstAttribute="leading" secondItem="JtN-ng-ceY" secondAttribute="leading" constant="4" id="ivB-Oh-CS6"/>
                                 </constraints>
-                                <state key="normal" title="Dismiss">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="dismissVC:" destination="HAQ-wJ-FWy" eventType="touchUpInside" id="QRb-Ni-77Z"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="JtN-ng-ceY">
-                                <rect key="frame" x="37.5" y="120" width="300" height="400.5"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a56-gk-42n">
-                                <rect key="frame" x="37" y="120" width="300.5" height="400.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="JtN-ng-ceY" firstAttribute="centerX" secondItem="GMW-An-2Wt" secondAttribute="centerX" id="8de-0x-L9k"/>
-                            <constraint firstItem="JtN-ng-ceY" firstAttribute="height" secondItem="GMW-An-2Wt" secondAttribute="height" multiplier="0.6" id="Cpt-3a-vZl"/>
-                            <constraint firstItem="a56-gk-42n" firstAttribute="leading" secondItem="JtN-ng-ceY" secondAttribute="leading" id="HYB-XI-slu"/>
-                            <constraint firstItem="JtN-ng-ceY" firstAttribute="width" secondItem="GMW-An-2Wt" secondAttribute="width" multiplier="0.8" id="LZ9-IK-WGf"/>
-                            <constraint firstItem="a56-gk-42n" firstAttribute="bottom" secondItem="JtN-ng-ceY" secondAttribute="bottom" id="LcA-Rl-cjd"/>
-                            <constraint firstItem="aoj-j8-A9Y" firstAttribute="top" secondItem="JtN-ng-ceY" secondAttribute="bottom" constant="15" id="N5L-5M-AAy"/>
-                            <constraint firstItem="aoj-j8-A9Y" firstAttribute="centerX" secondItem="GMW-An-2Wt" secondAttribute="centerX" id="aT1-oY-F7h"/>
-                            <constraint firstItem="a56-gk-42n" firstAttribute="trailing" secondItem="JtN-ng-ceY" secondAttribute="trailing" id="fd8-RP-QuX"/>
-                            <constraint firstItem="JtN-ng-ceY" firstAttribute="top" secondItem="LyI-ZN-0qp" secondAttribute="bottom" constant="100" id="rhQ-Hn-r1l"/>
-                            <constraint firstItem="a56-gk-42n" firstAttribute="top" secondItem="JtN-ng-ceY" secondAttribute="top" id="uFL-Fd-zji"/>
+                            <constraint firstItem="cUK-6E-hE1" firstAttribute="top" secondItem="LyI-ZN-0qp" secondAttribute="bottom" constant="100" id="K4K-E3-KFc"/>
+                            <constraint firstItem="EQ7-Un-heT" firstAttribute="top" secondItem="cUK-6E-hE1" secondAttribute="bottom" constant="100" id="WcF-8E-dy1"/>
+                            <constraint firstItem="cUK-6E-hE1" firstAttribute="width" secondItem="GMW-An-2Wt" secondAttribute="width" multiplier="0.7" id="Whl-Re-vLL"/>
+                            <constraint firstItem="cUK-6E-hE1" firstAttribute="centerX" secondItem="GMW-An-2Wt" secondAttribute="centerX" id="shC-JQ-BMG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="aoj-j8-A9Y" id="a5Y-1c-qvU"/>
+                        <outlet property="popupContentView" destination="cUK-6E-hE1" id="1rv-oo-Emc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddp-J4-dG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
