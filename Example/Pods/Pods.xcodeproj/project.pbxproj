@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F979D0A878062EA1DFD82B4ACE22C01 /* DynamicBlurView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */; };
 		10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAA1341F51CBCE036B7DE8DE5A4D4BD /* PopUpClass.swift */; };
+		151C591020D915CE0027A062 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151C590F20D915CE0027A062 /* InteractiveTransition.swift */; };
 		15D4C88920CAF93000EB37BA /* EasyViewControllerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D4C88720CAECCA00EB37BA /* EasyViewControllerPopup.swift */; };
 		15D4C88B20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D4C88A20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift */; };
 		15DD8D1F20C56E9A00CAA09D /* AnimationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD8D1E20C56E9A00CAA09D /* AnimationTypes.swift */; };
@@ -86,6 +87,7 @@
 		10E833FD317D38E463416EE2BA33425F /* BlurLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurLayer.swift; path = DynamicBlurView/BlurLayer.swift; sourceTree = "<group>"; };
 		114C734A6EC235EB27B6ED63C779F291 /* EasyPopUp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPopUp-umbrella.h"; sourceTree = "<group>"; };
 		14305AAC45D5657BECA1A0D1CD63F32A /* Pods-EasyPopUp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPopUp_Tests-dummy.m"; sourceTree = "<group>"; };
+		151C590F20D915CE0027A062 /* InteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractiveTransition.swift; path = EasyPopUp/Classes/InteractiveTransition.swift; sourceTree = "<group>"; };
 		153D7C5C41016ED311ADCC0452604E20 /* DynamicBlurView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DynamicBlurView-dummy.m"; sourceTree = "<group>"; };
 		15D4C88720CAECCA00EB37BA /* EasyViewControllerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EasyViewControllerPopup.swift; path = EasyPopUp/Classes/EasyViewControllerPopup.swift; sourceTree = "<group>"; };
 		15D4C88A20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EasyPopUpViewControllerDatasource.swift; path = EasyPopUp/Classes/EasyPopUpViewControllerDatasource.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				83CF3F6820BFE94D0054AE8D /* EasyPopupConfig.swift */,
 				15D4C88720CAECCA00EB37BA /* EasyViewControllerPopup.swift */,
 				15D4C88A20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift */,
+				151C590F20D915CE0027A062 /* InteractiveTransition.swift */,
 				2A87C6BD2985946A84B2859D43BEF9B8 /* Pod */,
 				14797BE6F8AA208DF9E040750205D343 /* Support Files */,
 			);
@@ -532,6 +535,7 @@
 				83CF3F6520BFDDE00054AE8D /* Extentions.swift in Sources */,
 				15D4C88920CAF93000EB37BA /* EasyViewControllerPopup.swift in Sources */,
 				C96C98BEACE77C1100DDC8524DCBE4FE /* EasyPopUp-dummy.m in Sources */,
+				151C591020D915CE0027A062 /* InteractiveTransition.swift in Sources */,
 				10DCFF064BF52AAF555252BABBEA3214 /* PopUpClass.swift in Sources */,
 				15D4C88B20CB067300EB37BA /* EasyPopUpViewControllerDatasource.swift in Sources */,
 				83CF3F6920BFE94D0054AE8D /* EasyPopupConfig.swift in Sources */,

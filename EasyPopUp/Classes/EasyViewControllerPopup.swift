@@ -10,6 +10,7 @@ import UIKit
 import DynamicBlurView
 
 
+
 public class EasyViewControllerPopup: NSObject {
     
     
@@ -25,6 +26,7 @@ public class EasyViewControllerPopup: NSObject {
     
     private var isPresenting = false
     
+    private let interactor = InteractiveTransition()
     
     /// The shadow container is parent view of popup
     /// As it does not clip subviews, a shadow can be applied to it
@@ -52,6 +54,7 @@ public class EasyViewControllerPopup: NSObject {
         }
         self.sourceVC.transitioningDelegate = self
         self.destinationVC.transitioningDelegate = self
+        interactor.viewController = self.destinationVC
         destinationVC.modalPresentationStyle = .overCurrentContext
         sourceVC.present(destinationVC, animated: true, completion: nil)
     }
@@ -61,6 +64,7 @@ public class EasyViewControllerPopup: NSObject {
         guard let destinationVCDatasource = presentedViewController as? EasyPopUpViewControllerDatasource else {return}
         
         self.popupView = destinationVCDatasource.popupView
+        popupView.addGestureRecognizer(UIPanGestureRecognizer(target: interactor, action: #selector(interactor.handlePan(_:))))
         
         let contextView = transitionContext.containerView
         
@@ -301,6 +305,9 @@ extension EasyViewControllerPopup : UIViewControllerTransitioningDelegate {
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.isPresenting = false
         return self
+    }
+    public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
     }
 }
 extension UIView {

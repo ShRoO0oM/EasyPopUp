@@ -38,6 +38,11 @@ public class EasyPopup {
     public var config : EasyPopupConfig
     public var blurView : DynamicBlurView?
     
+    // If the interactive transition was started
+    var hasStarted = false
+    
+    // If the interactive transition
+    var shouldFinish = false
     
     public init(superView:UIView,viewTopop view:UIView, config:EasyPopupConfig = EasyPopupConfig() ) {
         
@@ -269,3 +274,4 @@ public class EasyPopup {
         RemovePopUp(completion: nil)
     }
 }
+
