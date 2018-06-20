@@ -87,7 +87,7 @@ public class EasyPopup {
         case .scale:
             shadowView.frame = CenterFrame
             shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.6 ,options: config.animtionOptions, animations: {
+            UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
                 self.shadowView.transform = CGAffineTransform.identity
                 self.blurView?.blurRadius = self.config.blurRadius

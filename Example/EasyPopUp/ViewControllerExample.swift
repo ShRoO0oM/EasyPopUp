@@ -12,7 +12,6 @@ import EasyPopUp
 class ViewControllerExample: UIViewController {
     
     // MARK: - IBOutlets
-    
     @IBOutlet weak var popupContentView: UIView! {
         didSet {
             popupContentView.layer.cornerRadius = 5
@@ -23,14 +22,9 @@ class ViewControllerExample: UIViewController {
             dismissButton.layer.cornerRadius = dismissButton.frame.height/2
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     @IBAction func dismissVC(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
 }
 
 extension ViewControllerExample : EasyPopUpViewControllerDatasource {

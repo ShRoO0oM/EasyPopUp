@@ -24,7 +24,7 @@ public class EasyViewControllerPopup: NSObject {
     public var sourceVC : UIViewController
     public var destinationVC : UIViewController
     
-    private var isPresenting = false
+    public var isPresenting = false
     
     private let interactor = InteractiveTransition()
     
@@ -46,7 +46,6 @@ public class EasyViewControllerPopup: NSObject {
         self.sourceVC = sourceViewController
         self.destinationVC = destinationViewController
         self.config = config
-        
     }
     public func showVCAsPopup(){
         if destinationVC as? EasyPopUpViewControllerDatasource == nil {
@@ -193,7 +192,8 @@ public class EasyViewControllerPopup: NSObject {
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
-                transitionContext.completeTransition(finished)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                if transitionContext.transitionWasCancelled {return}
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
                 self.backView?.removeFromSuperview()
@@ -207,7 +207,8 @@ public class EasyViewControllerPopup: NSObject {
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
-                transitionContext.completeTransition(finished)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                if transitionContext.transitionWasCancelled {return}
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
                 self.backView?.removeFromSuperview()
@@ -218,7 +219,8 @@ public class EasyViewControllerPopup: NSObject {
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
-                transitionContext.completeTransition(finished)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                if transitionContext.transitionWasCancelled {return}
                 self.shadowView.transform = CGAffineTransform.identity
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
@@ -233,7 +235,8 @@ public class EasyViewControllerPopup: NSObject {
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
-                transitionContext.completeTransition(finished)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                if transitionContext.transitionWasCancelled {return}
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
                 self.backView?.removeFromSuperview()
@@ -247,7 +250,8 @@ public class EasyViewControllerPopup: NSObject {
                 self.backView?.alpha = 0
                 self.blurView?.blurRadius = 0
             }) { (finished) in
-                transitionContext.completeTransition(finished)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                if transitionContext.transitionWasCancelled {return}
                 self.blurView?.removeFromSuperview()
                 self.shadowView.removeFromSuperview()
                 self.backView?.removeFromSuperview()

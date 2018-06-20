@@ -24,8 +24,7 @@ public struct EasyPopupConfig {
     /// DynamicBlurView trackingMode
     public var blurTrackingMode : TrackingMode
     
-    
-    public init(shadowEnabled:Bool = true,cornerRadius: CGFloat = 3 ,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown,animtionOptions : UIViewAnimationOptions = UIViewAnimationOptions.beginFromCurrentState ,animaionDuration :TimeInterval = 0.3,blurRadius: CGFloat = 8,blurTrackingMode:TrackingMode = .common  ) {
+    public init(shadowEnabled:Bool = true,cornerRadius: CGFloat = 3 ,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown,animtionOptions : UIViewAnimationOptions = UIViewAnimationOptions.curveEaseOut ,animaionDuration :TimeInterval = 0.3,blurRadius: CGFloat = 8,blurTrackingMode:TrackingMode = .common  ) {
         self.shadowEnabled = shadowEnabled
         self.cornerRadius = cornerRadius
         self.dimBackground = dimBackground

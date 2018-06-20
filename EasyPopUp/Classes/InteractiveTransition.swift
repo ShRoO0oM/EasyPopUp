@@ -7,8 +7,8 @@
 
 import Foundation
 
-
 // Handles interactive transition triggered via pan gesture recognizer on dialog
+
 final class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     // If the interactive transition was started

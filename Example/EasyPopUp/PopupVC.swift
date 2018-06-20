@@ -43,6 +43,7 @@ class PopupVC: UIViewController,UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        
         self.animationTypePickerView.delegate?.pickerView!(animationTypePickerView, didSelectRow: 0, inComponent: 0)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -144,7 +145,6 @@ extension PopupVC: UIPickerViewDelegate , UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return animationTypes.count
     }
-    
 }
 extension String {
     var CGfloat : CGFloat? {
