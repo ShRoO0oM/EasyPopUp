@@ -35,22 +35,76 @@ EasyPopup divided to two classes one for views and the other for ViewControllers
 ## View Usage
 
 for view usage you should just pass your superView of your view and your view that you want to be your popup.
+you can give your custom config file ( will explain deep down below ) for custom transtions,shadows,corners,... .
 
 ```swift
 public init(superView: UIView, viewTopop view: UIView, config: EasyPopupConfig = default)
 // example
 let popupView = EasyPopup(superView: self.view, viewTopop: viewToPop)
 ```
+
 then you can show your popup with:
 
 ```swift
 public func Showpopup(completion: ((Bool) -> Void)? = nil)
 // example 
-popupViewpopUpView.showPopup { (isfinished) in
-            // do after showing popup 
+popupView.showPopup { (isfinished) in
+          // do after showing popup 
 }
 ```
 you can just show your popup or with completion handler do anything after popup animation is finished.
+
+and for dismissing popup :
+
+```swift
+public func removePopup(completion: ((Bool) -> Void)? = nil)
+// example 
+popupView.removePopup { (isfinished) in
+          // do after dismissing popup 
+}
+```
+## ViewController Usage
+for viewController usage your view controller must conform to `EasyPopUpViewControllerDatasource`
+you should pass your view ( which is in your view controller ) that you want to popup.
+note that your view should have constraints in your view controller.
+```swift
+public init(sourceViewController: UIViewController, destinationViewController: UIViewController, config: EasyPopupConfig = default)
+}
+```
+`sourceViewController` : the source viewController that you want to appear popup on.
+`destinationViewController` : the popup viewController that you want to show.
+`config` : the EasyPopup config file for giving custom shadow,transitions,cornerRadius,... .
+
+Usage Example:
+
+in your popup viewController class: 
+
+```swift
+class popViewController: UIViewController {
+    @IBOutlet weak var popupContentView: UIView!
+}
+extension popViewController : EasyPopUpViewControllerDatasource {
+    var popupView: UIView {
+        return popupContentView
+    }
+}
+```
+and in your source viewController:
+```swift
+let popupVC = self.storyboard?.instantiateViewController(withIdentifier: "popViewController") as! popViewController
+let easePopUp = EasyViewControllerPopup(sourceViewController: self, destinationViewController: popupVC )
+```
+for showing popup use the `showVCAsPopup` method
+```swift
+easePopUp.showVCAsPopup()
+```
+for dismissing simply dismiss the viewController. don't worry easypopup ovverride the default transition.
+
+If the usage guide wasn't useful,please run and look the example project.It will boost you 😇
+
+# Customization
+
+Easypopup uses configuration for custom transitions,Blurs,cornerRadius and shadows.
 
 
 # License
