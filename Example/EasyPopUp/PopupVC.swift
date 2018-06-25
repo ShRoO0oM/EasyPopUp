@@ -54,7 +54,7 @@ class PopupVC: UIViewController,UITextFieldDelegate {
     @IBAction func showPopup(_ sender: Any) {
         setupConfig()
         popUpView.config = popUpConfig
-        popUpView.Showpopup { (isfinished) in
+        popUpView.showPopup { (isfinished) in
             print(isfinished)
         }
     }

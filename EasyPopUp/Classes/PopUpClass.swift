@@ -52,7 +52,7 @@ public class EasyPopup {
         
         
     }
-    public func Showpopup(completion : ((Bool)->Void)?) {
+    public func showPopup(completion : ((Bool)->Void)? = nil ) {
         let CenterFrame =  CGRect(x: (superView.frame.width)/2 - (popupView.frame.width)/2,
                                   y: (superView.frame.height)/2 - (popupView.frame.height)/2,
                                   width: popupView.frame.width,
