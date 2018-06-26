@@ -6,7 +6,7 @@ target 'EasyPopUp_Example' do
   target 'EasyPopUp_Tests' do
     inherit! :search_paths
 
-   pod 'DynamicBlurView'
+   pod 'DynamicBlurView', '~> 2.0'
    
 
     

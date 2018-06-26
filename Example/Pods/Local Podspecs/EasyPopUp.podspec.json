@@ -16,14 +16,14 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "swift_version": "4.0",
   "source_files": "EasyPopUp/Classes/**/*",
   "frameworks": "UIKit",
   "dependencies": {
     "DynamicBlurView": [
-
+      "~> 2.0"
     ]
   }
 }

@@ -93,7 +93,7 @@ class PopupVC: UIViewController,UITextFieldDelegate {
     }
     @IBAction func removePopUp(_ sender: Any) {
         
-        popUpView.RemovePopUp { (isfinished) in
+        popUpView.removePopup { (isfinished) in
             print(isfinished)
         }
     }

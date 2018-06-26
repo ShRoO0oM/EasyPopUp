@@ -11,18 +11,16 @@ import DynamicBlurView
 /// Config for popup
 public struct EasyPopupConfig {
     
-    public var shadowEnabled : Bool
-    public var cornerRadius: CGFloat
-    public var dimBackground : Bool
-    public var blurBackground : Bool
-    public var autoDismiss: Bool
-    public var animationType: AnimationType
-    public var animaionDuration : TimeInterval
-    public var animtionOptions: UIViewAnimationOptions
-    /// Blur Radius you should enable the blurBackground variable to work
-    public var blurRadius: CGFloat
-    /// DynamicBlurView trackingMode
-    public var blurTrackingMode : TrackingMode
+    public var shadowEnabled : Bool // popup shadow
+    public var cornerRadius: CGFloat // the cornerRadius of popup
+    public var dimBackground : Bool // dim the backView of popup
+    public var blurBackground : Bool // whether contain blur or not
+    public var autoDismiss: Bool // the autoDismiss that dimiss popup when clicking on outside of view
+    public var animationType: AnimationType // animationType enum
+    public var animaionDuration : TimeInterval // animaionDuration
+    public var animtionOptions: UIViewAnimationOptions // UIViewAnimationOptions
+    public var blurRadius: CGFloat /// Blur Radius you should enable the blurBackground variable to work
+    public var blurTrackingMode : TrackingMode /// DynamicBlurView trackingMode
     
     public init(shadowEnabled:Bool = true,cornerRadius: CGFloat = 3 ,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown,animtionOptions : UIViewAnimationOptions = UIViewAnimationOptions.curveEaseOut ,animaionDuration :TimeInterval = 0.3,blurRadius: CGFloat = 8,blurTrackingMode:TrackingMode = .common  ) {
         self.shadowEnabled = shadowEnabled

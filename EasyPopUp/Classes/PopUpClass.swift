@@ -171,7 +171,7 @@ public class EasyPopup {
         popupView.layer.cornerRadius = config.cornerRadius
         popupView.clipsToBounds = true
     }
-    public func RemovePopUp(completion : ((Bool)->Void)? ){
+    public func removePopup(completion : ((Bool)->Void)? = nil ){
         
         switch config.animationType {
             
@@ -271,7 +271,7 @@ public class EasyPopup {
     }
     /// function for removing popup on tapping of superview
     @objc private func RemovepopupFromBlackView(){
-        RemovePopUp(completion: nil)
+        removePopup()
     }
 }
 
