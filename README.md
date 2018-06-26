@@ -138,4 +138,4 @@ public enum AnimationType {
 
 # License
 
-PopupDialog is available under the MIT license. See the LICENSE file for more info.
+EasyPopup is available under the MIT license. See the LICENSE file for more info.
