@@ -106,6 +106,35 @@ If the usage guide wasn't useful,please run and look the example project.It will
 
 Easypopup uses configuration for custom transitions,Blurs,cornerRadius and shadows.
 
+you can pass the config popup object:
+```swift
+popUpView.config = popUpConfig // or pass it via initializar  
+```
+the config contains these properties:
+```swift
+    public var shadowEnabled : Bool // popup shadow
+    public var cornerRadius: CGFloat // the cornerRadius of popup
+    public var dimBackground : Bool // dim the backView of popup
+    public var blurBackground : Bool // whether contain blur or not
+    public var autoDismiss: Bool // the autoDismiss that dimiss popup when clicking on outside of view
+    public var animationType: AnimationType // animationType enum
+    public var animaionDuration : TimeInterval // animaionDuration
+    public var animtionOptions: UIViewAnimationOptions // UIViewAnimationOptions
+    public var blurRadius: CGFloat /// Blur Radius you should enable the blurBackground variable to work
+    public var blurTrackingMode : TrackingMode /// DynamicBlurView trackingMode
+```
+EasyPopup use [`DynamicBlurView`](https://github.com/KyoheiG3/DynamicBlurView) for background blur.
+the animationType is the way your popup animates:
+```swift
+public enum AnimationType {
+    case scale
+    case upToDown
+    case downToUp
+    case immediate
+    case rightToleft
+    case leftToright
+}
+```
 
 # License
 
