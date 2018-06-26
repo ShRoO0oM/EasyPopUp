@@ -18,7 +18,7 @@ With EasyPopup you can easily convert your views/UViewController's to Popups.
 
 # Installation
 
-EasyPopUp is available through [CocoaPods](http://cocoapods.org). Simply add the following to your Podfile:
+EasyPopUp is available through [CocoaPods](https://cocoapods.org/pods/EasyPopUp). Simply add the following to your Podfile:
 
 ```ruby
 use_frameworks!
