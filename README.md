@@ -17,12 +17,7 @@ With EasyPopup you can easily convert your views/UViewController's to Popups.
 
 scale | rightToleft | upTodown | scale | rightToLeft | upTodown
 --- | --- | --- | --- | --- | --- | --- 
-![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/scale.gif) | 
-![rightToleft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/rightToleft.gif) | 
-![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/upToDown.gif) |
-![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcScale.gif) |
-![rightToLeft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/VCLeftToRight.gif) |
-![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcUpToDown.gif) |
+![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/scale.gif) | ![rightToleft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/rightToleft.gif) | ![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/upToDown.gif) | ![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcScale.gif) | ![rightToLeft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/VCLeftToRight.gif) | ![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcUpToDown.gif)
 
 
 
