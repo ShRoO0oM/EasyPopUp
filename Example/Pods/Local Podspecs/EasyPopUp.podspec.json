@@ -23,7 +23,7 @@
   "frameworks": "UIKit",
   "dependencies": {
     "DynamicBlurView": [
-      "~> 2.0"
+      "~> 3.0.1"
     ]
   }
 }

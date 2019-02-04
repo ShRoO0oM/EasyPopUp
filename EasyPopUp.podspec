@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.source_files = 'EasyPopUp/Classes/**/*'
 
   s.frameworks = 'UIKit'
-  s.dependency 'DynamicBlurView', '~> 2.0'
+  s.dependency 'DynamicBlurView', '~> 3.0.1'
    
    
    
