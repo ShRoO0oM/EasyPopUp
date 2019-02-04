@@ -1,8 +1,7 @@
 {
   "name": "EasyPopUp",
-  "version": "0.1.0",
-  "summary": "Easy way to transform UIViews to popups",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.1.1",
+  "summary": "Easy way to transform UIViews/UIViewControllers to popups",
   "homepage": "https://github.com/mohammadz74/EasyPopUp",
   "license": {
     "type": "MIT",
@@ -13,12 +12,13 @@
   },
   "source": {
     "git": "https://github.com/Mohammadz74/EasyPopUp.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
+  "social_media_url": "https://twitter.com/mohammad_Z74",
   "platforms": {
     "ios": "9.0"
   },
-  "swift_version": "4.0",
+  "swift_version": "4.2",
   "source_files": "EasyPopUp/Classes/**/*",
   "frameworks": "UIKit",
   "dependencies": {

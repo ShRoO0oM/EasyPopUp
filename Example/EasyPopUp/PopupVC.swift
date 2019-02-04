@@ -46,9 +46,9 @@ class PopupVC: UIViewController,UITextFieldDelegate {
         
         self.animationTypePickerView.delegate?.pickerView!(animationTypePickerView, didSelectRow: 0, inComponent: 0)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     @IBAction func showPopup(_ sender: Any) {

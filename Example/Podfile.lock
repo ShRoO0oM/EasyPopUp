@@ -1,6 +1,6 @@
 PODS:
   - DynamicBlurView (2.0.2)
-  - EasyPopUp (0.1.0):
+  - EasyPopUp (0.1.1):
     - DynamicBlurView (~> 2.0)
 
 DEPENDENCIES:
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
-  EasyPopUp: 91259200daee774913dd639ef43a27e2e1b41823
+  EasyPopUp: c70b0f65536b7cc1b234f115b213c0d72ddc1fa0
 
 PODFILE CHECKSUM: 2db901b90447c61d360e8a1c718db2d9451ce7f3
 
