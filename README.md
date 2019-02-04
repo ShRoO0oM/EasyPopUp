@@ -12,12 +12,12 @@
 
 # Introduction
 
-With EasyPopup you can easily convert your views/UViewController's to Popups.
+With EasyPopup you can easily convert your views/UViewController's into Popups.
 
 
-scale | rightToleft | upTodown | scale | rightToLeft | upTodown
---- | --- | --- | --- | --- | --- | --- 
-![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/scale.gif) | ![rightToleft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/rightToleft.gif) | ![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/upToDown.gif) | ![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcScale.gif) | ![rightToLeft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/VCLeftToRight.gif) | ![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcUpToDown.gif)
+scale | rightToleft | upTodown | scale | leftToRight | upTodown
+--- | --- | --- | --- | --- | ---
+![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/scale.gif) | ![rightToleft](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/rightToleft.gif) | ![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/upToDown.gif) | ![scale](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcScale.gif) | ![leftToRight](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/VCLeftToRight.gif) | ![upTodown](https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/vcUpToDown.gif)
 
 
 
@@ -41,11 +41,11 @@ pod 'EasyPopUp'
 You can easily find and run the demo app in example folder.
 
 # Usage
-EasyPopup divided to two classes one for views and the other for ViewControllers.
+EasyPopup is composed of two classes; one for views and the other for ViewControllers.
 ## View Usage
 
 for view usage you should just pass your superView of your view and your view that you want to be your popup.
-you can give your custom config file ( will explain deep down below ) for custom transtions,shadows,corners,... .
+you can give your custom config file (find the complete explanation down below) for custom transtions,shadows,corners,... .
 
 ```swift
 public init(superView: UIView, viewTopop view: UIView, config: EasyPopupConfig = default)
