@@ -2,7 +2,7 @@
 	<img src="https://github.com/mohammadZ74/EasyPopUp/blob/master/EasyPopUp/Assets/1.png" width="500">
 </p>
 <p align="center">
-    <img src="https://img.shields.io/badge/Swift-4.1-green.svg" />
+    <img src="https://img.shields.io/badge/Swift-4.2-green.svg" />
         <img src="https://img.shields.io/badge/platform-ios-green.svg" />
     <a href="https://opensource.org/licenses/MIT">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
