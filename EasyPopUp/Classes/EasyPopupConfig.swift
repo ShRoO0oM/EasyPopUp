@@ -18,11 +18,11 @@ public struct EasyPopupConfig {
     public var autoDismiss: Bool // the autoDismiss that dimiss popup when clicking on outside of view
     public var animationType: AnimationType // animationType enum
     public var animaionDuration : TimeInterval // animaionDuration
-    public var animtionOptions: UIViewAnimationOptions // UIViewAnimationOptions
+    public var animtionOptions: UIView.AnimationOptions // UIViewAnimationOptions
     public var blurRadius: CGFloat /// Blur Radius you should enable the blurBackground variable to work
     public var blurTrackingMode : TrackingMode /// DynamicBlurView trackingMode
     
-    public init(shadowEnabled:Bool = true,cornerRadius: CGFloat = 3 ,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown,animtionOptions : UIViewAnimationOptions = UIViewAnimationOptions.curveEaseOut ,animaionDuration :TimeInterval = 0.3,blurRadius: CGFloat = 8,blurTrackingMode:TrackingMode = .common  ) {
+    public init(shadowEnabled:Bool = true,cornerRadius: CGFloat = 3 ,dimBackground:Bool = true,blurBackground:Bool = false ,autoDismiss:Bool = true ,animationType:AnimationType = .upToDown,animtionOptions : UIView.AnimationOptions = UIView.AnimationOptions.curveEaseOut ,animaionDuration :TimeInterval = 0.3,blurRadius: CGFloat = 8,blurTrackingMode:TrackingMode = .common  ) {
         self.shadowEnabled = shadowEnabled
         self.cornerRadius = cornerRadius
         self.dimBackground = dimBackground

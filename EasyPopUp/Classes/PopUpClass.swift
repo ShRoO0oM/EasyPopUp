@@ -53,12 +53,9 @@ public class EasyPopup {
         
     }
     public func showPopup(completion : ((Bool)->Void)? = nil ) {
-        let CenterFrame =  CGRect(x: (superView.frame.width)/2 - (popupView.frame.width)/2,
-                                  y: (superView.frame.height)/2 - (popupView.frame.height)/2,
-                                  width: popupView.frame.width,
-                                  height: popupView.frame.height)
+    
         
-        // preapring view with config
+        // preparing view with config
         if config.dimBackground {
             self.addDimView()
         }
@@ -79,13 +76,23 @@ public class EasyPopup {
         
         superView.addSubview(shadowView)
         shadowView.addSubview(popupView)
-        superView.bringSubview(toFront: shadowView)
+        superView.bringSubviewToFront(shadowView)
         
         UIApplication.shared.beginIgnoringInteractionEvents()
         
+        shadowView.translatesAutoresizingMaskIntoConstraints = false
+        superView.addConstraints([
+            shadowView.centerXAnchor.constraint(equalTo: superView.centerXAnchor),
+            shadowView.centerYAnchor.constraint(equalTo: superView.centerYAnchor),
+            shadowView.widthAnchor.constraint(equalToConstant: shadowView.bounds.width),
+            shadowView.heightAnchor.constraint(equalToConstant: shadowView.bounds.height)
+            ])
+        
         switch config.animationType {
         case .scale:
-            shadowView.frame = CenterFrame
+            
+            
+            superView.layoutIfNeeded()
             shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
@@ -101,10 +108,7 @@ public class EasyPopup {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
-                                              width: self.shadowView.frame.width,
-                                              height: self.shadowView.frame.height)
+                self.superView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 completion?(finished)
@@ -116,10 +120,7 @@ public class EasyPopup {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
-                                              width: self.shadowView.frame.width,
-                                              height: self.shadowView.frame.height)
+                self.superView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 completion?(finished)
@@ -133,10 +134,7 @@ public class EasyPopup {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
-                                              width: self.shadowView.frame.width,
-                                              height: self.shadowView.frame.height)
+                self.superView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 completion?(finished)
@@ -150,10 +148,7 @@ public class EasyPopup {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
-                                              y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
-                                              width: self.shadowView.frame.width,
-                                              height: self.shadowView.frame.height)
+                self.superView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 completion?(finished)
@@ -161,10 +156,7 @@ public class EasyPopup {
             })
         case .immediate:
             self.backView?.alpha = 0.5
-            self.shadowView.frame = CGRect(x: (self.superView.frame.width)/2 - self.shadowView.frame.width/2,
-                                          y: (self.superView.frame.height)/2 - self.shadowView.frame.height/2,
-                                          width: self.shadowView.frame.width,
-                                          height: self.shadowView.frame.height)
+            self.superView.layoutIfNeeded()
             self.blurView?.blurRadius = self.config.blurRadius
             UIApplication.shared.endIgnoringInteractionEvents()
         }
@@ -256,6 +248,7 @@ public class EasyPopup {
     private func addDimView(){
         backView = UIView(frame: superView.bounds)
         superView.addSubview(backView)
+        backView.autoresizingMask = [.flexibleWidth,.flexibleHeight,.flexibleBottomMargin,.flexibleLeftMargin,.flexibleRightMargin,.flexibleTopMargin,.flexibleBottomMargin]
         backView.backgroundColor = UIColor.darkGray
         backView.alpha = 0
         backView.isOpaque = true

@@ -67,11 +67,11 @@ public class EasyViewControllerPopup: NSObject {
         
         let contextView = transitionContext.containerView
         
-        let CenterFrame =  CGRect(x: (contextView.frame.width)/2 - (popupView.frame.width)/2,
+        let centerFrame =  CGRect(x: (contextView.frame.width)/2 - (popupView.frame.width)/2,
                                   y: (contextView.frame.height)/2 - (popupView.frame.height)/2,
                                   width: popupView.frame.width,
                                   height: popupView.frame.height)
-        shadowView.frame = CenterFrame
+        shadowView.frame = centerFrame
         // preapring view with config
         if config.dimBackground {
             self.addDimView(to: contextView)
@@ -94,10 +94,17 @@ public class EasyViewControllerPopup: NSObject {
         shadowView.addSubview(popupView)
         popupView.fillToSuperview()
  
+        shadowView.translatesAutoresizingMaskIntoConstraints = false
+        contextView.addConstraints([
+            shadowView.centerXAnchor.constraint(equalTo: contextView.centerXAnchor),
+            shadowView.centerYAnchor.constraint(equalTo: contextView.centerYAnchor),
+            shadowView.widthAnchor.constraint(equalToConstant: shadowView.bounds.width),
+            shadowView.heightAnchor.constraint(equalToConstant: shadowView.bounds.height)
+            ])
         
         switch config.animationType {
         case .scale:
-            shadowView.frame = CenterFrame
+            contextView.layoutIfNeeded()
             shadowView.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.6 ,options: config.animtionOptions, animations: {
                 self.backView.alpha = 0.5
@@ -112,10 +119,7 @@ public class EasyViewControllerPopup: NSObject {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
-                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
-                                               width: self.shadowView.frame.width,
-                                               height: self.shadowView.frame.height)
+                contextView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 transitionContext.completeTransition(finished)
@@ -126,10 +130,7 @@ public class EasyViewControllerPopup: NSObject {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
-                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
-                                               width: self.shadowView.frame.width,
-                                               height: self.shadowView.frame.height)
+                contextView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 transitionContext.completeTransition(finished)
@@ -142,10 +143,7 @@ public class EasyViewControllerPopup: NSObject {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
-                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
-                                               width: self.shadowView.frame.width,
-                                               height: self.shadowView.frame.height)
+                contextView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 transitionContext.completeTransition(finished)
@@ -158,20 +156,14 @@ public class EasyViewControllerPopup: NSObject {
             
             UIView.animate(withDuration: config.animaionDuration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0 , options: config.animtionOptions , animations: {
                 self.backView?.alpha = 0.5
-                self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
-                                               y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
-                                               width: self.shadowView.frame.width,
-                                               height: self.shadowView.frame.height)
+                contextView.layoutIfNeeded()
                 self.blurView?.blurRadius = self.config.blurRadius
             }, completion : { finished in
                 transitionContext.completeTransition(finished)
             })
         case .immediate:
             self.backView?.alpha = 0.5
-            self.shadowView.frame = CGRect(x: (contextView.frame.width)/2 - self.shadowView.frame.width/2,
-                                           y: (contextView.frame.height)/2 - self.shadowView.frame.height/2,
-                                           width: self.shadowView.frame.width,
-                                           height: self.shadowView.frame.height)
+            contextView.layoutIfNeeded()
             self.blurView?.blurRadius = self.config.blurRadius
             transitionContext.completeTransition(true)
         }
@@ -270,6 +262,7 @@ public class EasyViewControllerPopup: NSObject {
     private func addDimView(to view:UIView){
         backView = UIView(frame: view.bounds)
         view.addSubview(backView)
+        backView.autoresizingMask = [.flexibleWidth,.flexibleHeight,.flexibleBottomMargin,.flexibleLeftMargin,.flexibleRightMargin,.flexibleTopMargin,.flexibleBottomMargin]
         backView.backgroundColor = UIColor.darkGray
         backView.alpha = 0
         backView.isOpaque = true
