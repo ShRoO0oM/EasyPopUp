@@ -44,7 +44,7 @@ To integrate using Apple's Swift package manager, add the following as a depende
 .package(url: "https://github.com/mohammadZ74/EasyPopUp.git", .upToNextMajor(from: "1.0.0"))
 ```
 
-and then specify `"Hero"` as a dependency of the Target in which you wish to use Hero.
+and then specify `"EasyPopUp"` as a dependency of the Target in which you wish to use EasyPopUp.
 Here's an example `PackageDescription`:
 
 ```swift
