@@ -41,7 +41,7 @@ pod 'EasyPopUp'
 To integrate using Apple's Swift package manager, add the following as a dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/mohammadZ74/EasyPopUp.git", .upToNextMajor(from: "1.0.0"))
+.package(url: "https://github.com/mohammadZ74/EasyPopUp.git", .upToNextMajor(from: "0.1.3"))
 ```
 
 and then specify `"EasyPopUp"` as a dependency of the Target in which you wish to use EasyPopUp.
