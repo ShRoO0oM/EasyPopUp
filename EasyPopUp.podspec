@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.swift_version = '4.2'
 
-  s.source_files = 'EasyPopUp/Classes/**/*'
+  s.source_files = 'Sources/EasyPopUp/Classes/**/*'
 
   s.frameworks = 'UIKit'
   s.dependency 'DynamicBlurView', '~> 3.0.1'
