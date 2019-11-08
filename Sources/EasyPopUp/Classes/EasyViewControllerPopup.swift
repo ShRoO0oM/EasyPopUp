@@ -9,8 +9,6 @@
 import UIKit
 import DynamicBlurView
 
-
-
 public class EasyViewControllerPopup: NSObject {
     
     

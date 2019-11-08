@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Handles interactive transition triggered via pan gesture recognizer on dialog
 

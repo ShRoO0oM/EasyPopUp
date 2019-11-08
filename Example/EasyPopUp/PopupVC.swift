@@ -9,7 +9,6 @@
 import UIKit
 import EasyPopUp
 
-
 class PopupVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet var viewToPop: UIView!

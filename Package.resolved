@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DynamicBlurView",
+        "repositoryURL": "https://github.com/mohammadZ74/DynamicBlurView.git",
+        "state": {
+          "branch": null,
+          "revision": "e09585bf9e347a48e1b28a3c2dbcd01ca707d70d",
+          "version": "4.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
